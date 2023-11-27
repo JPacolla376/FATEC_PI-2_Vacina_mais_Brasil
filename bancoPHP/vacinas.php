@@ -2,12 +2,8 @@
 
 include_once("conexao.php");
 
-class Vacinas {
+class Vacinas extends Conectar {
   private $id, $nome, $origem, $data_validade, $data_fabricacao, $conec;
-
-  public function __construct() {
-    $this->conec = new Conectar();
-  }
 
   public function inserirVacina($id, $nome, $origem, $data_validade, $data_fabricacao) {
     $this->id = $id;
@@ -22,10 +18,6 @@ class Vacinas {
     } catch (PDOException $e) {
       echo $sql . "<br>" . $e->getMessage();
     }
-  }
-
-  public function __destruct() {
-    $this->conec->fecharConexao();
   }
 }
 

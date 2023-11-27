@@ -3,12 +3,8 @@
 include_once("conexao.php");
 include_once("header.php");
 
-class Usuario {
+class Usuario extends Conectar {
   private $cpf, $nome, $idade, $email, $senha, $conec;
-
-  public function __construct() {
-    $this->conec = new Conectar();
-  }
 
   public function cadastrar($cpf, $nome, $idade, $email, $senha) {
     $this->cpf = $cpf;
@@ -43,10 +39,6 @@ class Usuario {
     } catch (PDOException $e) {
       echo $sql . "<br>" . $e->getMessage();
     }
-  }
-
-  public function __destruct() {
-    $this->conec->fecharConexao();
   }
 }
 

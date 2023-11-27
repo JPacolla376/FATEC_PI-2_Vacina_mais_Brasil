@@ -2,12 +2,8 @@
 
 include_once("conexao.php");
 
-class Vacinou {
+class Vacinou extends Conectar {
   private $data_vacinado, $conec, $id_vacina, $cpf_usr;
-
-  public function __construct() {
-    $this->conec = new Conectar();
-  }
 
   public function inserirVacinaUsuario($cpf_usr, $id_vacina, $data_vacinado) {
     try {
@@ -38,10 +34,6 @@ class Vacinou {
     } else {
       echo "ID da vacina ou o CPF do usuário está errado";
     }
-  }
-
-  public function __destruct() {
-    $this->conec->fecharConexao();
   }
 }
 

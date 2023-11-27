@@ -24,6 +24,10 @@ class Conectar {
   public function fecharConexao() {
     $this->conn = NULL;
   }
+
+  public function __destruct() {
+    $this->fecharConexao();
+  }
 }
 
 ?>
