@@ -10,7 +10,7 @@ class Usuario {
     $this->conec = new Conectar();
   }
 
-  public function inserirUsuario($cpf, $nome, $idade, $email, $senha) {
+  public function cadastrar($cpf, $nome, $idade, $email, $senha) {
     $this->cpf = $cpf;
     $this->nome = $nome;
     $this->idade = $idade;
