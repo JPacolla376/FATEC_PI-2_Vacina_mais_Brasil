@@ -4,18 +4,17 @@ include_once("conexao.php");
 include_once("header.php");
 
 class Usuario extends Conectar {
-  private $cpf, $nome, $idade, $email, $senha, $conec;
 
   public function cadastrar($cpf, $nome, $idade, $email, $senha) {
-    $this->cpf = $cpf;
-    $this->nome = $nome;
-    $this->idade = $idade;
-    $this->email = $email;
-    $this->senha = $senha;
-
     try {
-      $sql = "INSERT INTO usuario (CPF, Nome, Idade, E_mail, senha) VALUES ($cpf, '$nome', $idade, '$email', '$senha')";
-      $stmt = $this->conec->getConn()->query($sql);
+      $sql = "INSERT INTO usuario (CPF, Nome, Idade, E_mail, senha) VALUES (:cpf, ':nome', :idade, ':email', ':senha')";
+      $stmt = $this->getConn()->prepare($sql);
+      $stmt->bindParam(':cpf', $cpf);
+      $stmt->bindParam(':nome', $nome);
+      $stmt->bindParam(':idade', $idade);
+      $stmt->bindParam(':email', $email);
+      $stmt->bindParam(':senha', $senha);
+      $stmt->execute();
     } catch (PDOException $e) {
       echo $sql . "<br>" . $e->getMessage();
     }
@@ -24,7 +23,7 @@ class Usuario extends Conectar {
   public function login($cpf, $senha) {
     try {
       $sql = "SELECT * FROM usuario WHERE CPF = $cpf AND senha = '$senha'";
-      $stmt = $this->conec->getConn()->query($sql);
+      $stmt = $this->getConn()->query($sql);
       $row = $stmt->fetch();
       if ($row != false) {
         session_start();
