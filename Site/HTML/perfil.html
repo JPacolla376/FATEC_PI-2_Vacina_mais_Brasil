@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../CSS/perfil.css">
+    <title>Perfil</title>
+</head>
+<body>
+    <header class="menu-principal">
+        <main>
+            <div class="header-1">
+                <div class="logo">
+                    <img src="../IMAGEM/logo.png" alt="Logo">
+                </div>
+            </div>
+        </main>
+    </header>
+    <main class="col-100 menu-urls">
+        <div class="header-2">
+            <div class="menu">
+                <ul>
+                    <li><a href="../HTML/index.html">Início</a></li>
+                    <li><a href="#">Minhas Vacinas</a></li>
+                    <li><a href="#">Conteúdo</a></li>
+                    <li><a href="#">Perfil</a></li>
+                    <li><a href="../HTML/sobre.html">Sobre Nós</a></li>
+                </ul>
+            </div>
+            <div class="busca">
+                <input placeholder="Pesquise aqui" type="text">
+                <i class="bi bi-search"></i>
+            </div>            
+        </div>
+    </main>
+    <section class="py-5 my-5">
+        <div class="container">
+            <div class="bg-white shadow rounded-lg d-block d-sm-flex">
+                <div class="profile-tab-nav border-right">
+                    <div class="p-4">
+                        <div class="img-circle text-center mb-3">
+                            <label for="inputImage" style="cursor: pointer;">
+                                <img id="previewImage" src="#" alt="Image" class="shadow">
+                            </label>
+                            <input type="file" id="inputImage" style="display: none;" accept="image/*" onchange="previewSelectedImage()">
+                        </div>                        
+                        <h4 class="text-center">Wesley Gustavo Kilian</h4>
+                    </div>
+                    <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                        <a class="nav-link active" id="account-tab" data-toggle="pill" href="#account" role="tab" aria-controls="account" aria-selected="true">
+                            <i class="fa fa-home text-center mr-1"></i>
+                            Conta
+                        </a>
+                        <a class="nav-link" id="password-tab" data-toggle="pill" href="#password" role="tab" aria-controls="password" aria-selected="false">
+                            <i class="fa fa-key text-center mr-1"></i>
+                            Senha
+                        </a>
+                        <a class="nav-link" id="application-tab" data-toggle="pill" href="#application" role="tab" aria-controls="application" aria-selected="false">
+                            <i class="fa fa-tv text-center mr-1"></i>
+                            Applicação
+                        </a>
+                        <a class="nav-link" id="Notification-tab" data-toggle="pill" href="#Notification" role="tab" aria-controls="Notification"  aria-selected="false">
+                            <i class="fa fa-bell text-center mr-1"></i>
+                            Notificação
+                        </a>  
+                    </div>
+                </div>
+                <div class="tab-content p-4 p-md-5" id="v-pills-tabContent">
+                    <div class="tab-pane fade show active" id="account" role="tabpanel" aria-labelledby="account-tab">
+                        <h3 class="mb-4">Configurações de Conta</h3>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Nome Completo</label>
+                                    <input type="text" class="form-control" value="wesley Gustavo Kilian">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Email</label>
+                                    <input type="text" class="form-control" value="Wesleygukilian@gmail.com">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Telefone</label>
+                                    <input type="text" class="form-control" value="+55 (19) 123456789">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>CPF</label>
+                                    <input type="text" class="form-control" value="468.306.598.87">
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <button class="btn btn-primary">Salvar</button>
+                            <button class="btn btn-light">Cancelar</button>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="password" role="tabpanel" aria-labelleby="password-tab">
+                        <h3 class="mb-4">Configurações de senha</h3>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Senha Atual</label>
+                                    <input type="password" class="form-control" readonly>
+                                </div>
+                            </div>
+                        </div>                        
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <i class="bi bi-eye-fill" id="btn-senha-nova" onclick="mostrarSenha('senha-nova')"></i>
+                                    <label>Nova Senha</label>
+                                    <input type="password" class="form-control" id="senha-nova">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <i class="bi bi-eye-fill" id="btn-senha-confirmada" onclick="mostrarSenha('senha-confirmada')"></i>
+                                    <label>Confirme a Senha</label>
+                                    <input type="password" class="form-control" id="senha-confirmada">
+                                </div>
+                            </div>
+                        </div>                        
+                        <div>
+                            <button class="btn btn-primary">Salvar</button>
+                            <button class="btn btn-light">Cancelar</button>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="application" role="tabpanel" aria-labelledby="application-tab">
+                        <h3 class="mb-4">Configurações do aplicativo</h3>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="app-check">
+                                        <label class="form-check-label" for="app-check">Verificação 1</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
+                                        <label class="form-check-label" for="defaultCheck2">Verificação 2</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <button class="btn btn-primary">Salvar</button>
+                            <button class="btn btn-light">Cancelar</button>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="Notification" role="tabpanel" aria-labelledby="Notification-tab">
+                        <h3 class="mb-4">Configurações de notificação</h3>
+                        <div class="form-group">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="Notification1">
+                                <label class="form-check-label" for="Notification1">permissao1</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="Notification2">
+                                <label class="form-check-label" for="Notification2">permissao2</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="Notification3">
+                                <label class="form-check-label" for="Notification3">permissao3</label>
+                            </div>
+                        </div>
+                        <div>
+                            <button class="btn btn-primary">Salvar</button>
+                            <button class="btn btn-light">Cancelar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="../JAVASCRIPT/perfil.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+</body>
+</html>
