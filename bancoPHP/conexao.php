@@ -1,11 +1,11 @@
 <?php
 
 class Conectar {
-  private $servername = "127.0.0.1";
-  private $username = "root";
-  private $password = "";
-  private $dbname = "vacinabrasil";
-  private $conn = NULL;
+  protected $servername = "127.0.0.1";
+  protected $username = "root";
+  protected $password = "";
+  protected $dbname = "vacinabrasil";
+  protected $conn;
 
   public function __construct() {
     try {
@@ -23,6 +23,10 @@ class Conectar {
 
   public function fecharConexao() {
     $this->conn = NULL;
+  }
+
+  public function __destruct() {
+    $this->fecharConexao();
   }
 }
 
