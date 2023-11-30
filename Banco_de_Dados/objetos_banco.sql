@@ -2,10 +2,10 @@
 DELIMITER $$
 
 -- function login()
-CREATE OR REPLACE FUNCTION login(cpf VARCHAR(11), senha VARCHAR(60)) RETURNS VARCHAR(60)
+CREATE OR REPLACE FUNCTION login(cpf_usr VARCHAR(11), senha_usr VARCHAR(60)) RETURNS VARCHAR(60)
 BEGIN
   DECLARE usuario VARCHAR(60);
-  SELECT `Nome` INTO usuario FROM usuario WHERE CPF = cpf AND senha = senha;
+  SELECT `Nome` INTO usuario FROM usuario WHERE CPF = cpf_usr AND senha = senha_usr;
   IF usuario IS NOT NULL THEN
     RETURN usuario;
   ELSE
