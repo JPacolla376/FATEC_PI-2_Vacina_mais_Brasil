@@ -1,0 +1,190 @@
+body{
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+ul{
+    padding: 0px !important;
+}
+
+.menu-principal {
+    width: 100%;
+    background-color: #252323;
+    height: 60px;
+}
+
+.main {
+    margin: 0 auto;
+    max-width: 980px;
+    position: relative;
+}
+
+.header-1 {
+    background-color: #252323;
+    height: 60px;
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Centraliza os itens horizontalmente */
+    align-items: center; /* Centraliza os itens verticalmente */
+}
+
+.logo {
+    padding: 16px;
+    margin-right: 55%;
+}
+
+/*logo img nao tem no video*/
+.logo img {
+    width: 40%;
+}
+
+/*bi nao tem no video*/
+.bi-facebook, .bi-twitter, .bi-whatsapp, .bi-instagram {
+    color: white;
+    font-size: 25px;
+}
+
+.header-2 {
+    background-color: #ffffff;
+    width: 980px;
+    margin: 0 auto;
+    padding: 16px;
+    margin-left: 60px; /*MARGIN DOS CAMPOS INICIO, MINHAS VACINAS....*/
+}
+
+.menu-urls{
+    height: 70px; /*ALTURA DA LINHA*/
+    border-bottom: 3px solid #efefef;
+}
+
+.menu ul li {
+    display: inline-block;
+    color: #efefef;
+    margin-left: 30px;
+    height: 43px; /*ALTURA DA COR AZUL*/
+}
+
+.menu ul li:hover{
+    border-bottom: 2px solid #00bac6;
+}
+
+.menu ul li a:hover{
+    color: #00bac6;
+}
+
+.menu ul li a {
+    color: #8b8b8b; 
+    text-decoration: none;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+.menu {
+    width: 70%; 
+    float: left;
+    margin-top: 10px; /*ALTURA DOS CAMPOS INICIO, MINHAS VACINAS....*/
+}
+
+.busca {
+    position: relative;
+    width: 30%;
+    float: right;
+    margin-top: 0px; /*ALTURA DA BARRA DE PESQUISA*/
+}
+
+.busca input {
+    padding: 12px;
+    width: 250px;
+    height: 40px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    transition: border-color 0.3s;
+}
+
+.busca input:focus {
+    outline: none;
+    border-color: #8b8b8b; 
+}
+
+.busca i {
+    position: absolute;
+    top: 40%;
+    right: 50px; 
+    transform: translateY(-50%);
+}
+
+.busca i.bi-search {
+    font-size: 20px;
+    color: #8b8b8b;
+}
+
+.col-100{
+    width: 100%;
+    float: left;
+    position: relative;
+}
+
+.shadow{
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1) !important;
+}
+
+.profile-tab-nav{
+    min-width: 250px;
+}
+
+.tab-content{
+    flex: 1;
+}
+
+.form-group{
+    margin-bottom: 1.5rem;
+}
+
+.nav-pills a.nav-link{
+    padding: 15px 20px;
+    border-bottom: 1px solid #ddd;
+    border-radius: 0;
+    color: #133;
+}
+
+.img-circle img {
+    height: 100px;
+    width: 100px;
+    border-radius: 100%;
+    border: 5px solid #fff;
+}
+
+.bi-eye-fill, .bi-eye-slash{
+    position: absolute;
+    top: 55%;
+    right: 25px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 17px;
+}
+
+.btn-primary{
+    background: linear-gradient(to right, #54ce3c, #197c0c);
+    border: none;
+    color: #fff; 
+    width: 85px;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(to right, #33a01d, #125a08); 
+}
+
+.btn-light{
+    background: linear-gradient(to right, rgb(212, 22, 22), rgb(190, 2, 2));
+    border: none;
+    color: #fff; 
+    margin-left: 15px;
+}
+
+.btn-light:hover{
+    background: linear-gradient(to right, rgb(184, 8, 8), rgb(156, 3, 3));
+    color: #fff; 
+}
