@@ -21,12 +21,8 @@ class Vacinou extends Conectar {
 
     if ($stmt_usr != false && $stmt_vac != false) {
       try {
-        $sql = "INSERT INTO vacinou (fk_Usuario_CPF, fk_Vacinas_ID, Data_Vacinado) VALUES (:cpf_usr, :id_vacina, ':data_vacinado')";
-        $stmt = $this->getConn()->prepare($sql);
-        $stmt->bindParam(':cpf_usr', $cpf_usr);
-        $stmt->bindParam(':id_vacina', $id_vacina);
-        $stmt->bindParam(':data_vacinado', $data_vacinado);
-        $stmt->execute();
+        $sql = "INSERT INTO vacinou (fk_Usuario_CPF, fk_Vacinas_ID, Data_Vacinado) VALUES ('$cpf_usr', $id_vacina, '$data_vacinado')";
+        $stmt = $this->getConn()->exec($sql);
       } catch (PDOException $e) {
         echo $sql . "<br>" . $e->getMessage();
       }

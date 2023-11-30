@@ -7,14 +7,8 @@ class Usuario extends Conectar {
 
   public function cadastrar($cpf, $nome, $idade, $email, $senha) {
     try {
-      $sql = "INSERT INTO usuario (CPF, Nome, Idade, E_mail, senha) VALUES (:cpf, ':nome', :idade, ':email', ':senha')";
-      $stmt = $this->getConn()->prepare($sql);
-      $stmt->bindParam(':cpf', $cpf);
-      $stmt->bindParam(':nome', $nome);
-      $stmt->bindParam(':idade', $idade);
-      $stmt->bindParam(':email', $email);
-      $stmt->bindParam(':senha', $senha);
-      $stmt->execute();
+      $sql = "INSERT INTO usuario (CPF, Nome, Idade, E_mail, senha) VALUES ('$cpf', '$nome', $idade, '$email', '$senha')";
+      $stmt = $this->getConn()->exec($sql);
     } catch (PDOException $e) {
       echo $sql . "<br>" . $e->getMessage();
     }
