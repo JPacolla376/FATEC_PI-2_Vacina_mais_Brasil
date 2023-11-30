@@ -4,7 +4,7 @@ CREATE OR REPLACE FUNCTION login(cpf VARCHAR(11), senha VARCHAR(60)) RETURNS VAR
 BEGIN
   DECLARE usuario VARCHAR(60);
   SELECT `Nome` INTO usuario FROM usuario WHERE CPF = cpf AND senha = senha;
-  IF usuario IS NULL THEN
+  IF usuario IS NOT NULL THEN
     RETURN usuario;
   ELSE
     RETURN '0';
