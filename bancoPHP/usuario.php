@@ -16,7 +16,7 @@ class Usuario extends Conectar {
 
   public function login($cpf, $senha) {
     try {
-      $sql = "SELECT * FROM usuario WHERE CPF = $cpf AND senha = '$senha'";
+      $sql = "SELECT * FROM usuario WHERE CPF = '$cpf' AND senha = '$senha'";
       $stmt = $this->getConn()->query($sql);
       $row = $stmt->fetch();
       if ($row != false) {
