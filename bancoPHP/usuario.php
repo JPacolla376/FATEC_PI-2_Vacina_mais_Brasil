@@ -16,13 +16,12 @@ class Usuario extends Conectar {
 
   public function login($cpf, $senha) {
     try {
-      $sql = "SELECT * FROM usuario WHERE CPF = '$cpf' AND senha = '$senha'";
-      $stmt = $this->getConn()->query($sql);
-      $row = $stmt->fetch();
-      if ($row != false) {
+      $sql = "SELECT login('$cpf', '$senha')";
+      $user = $this->getConn()->query($sql);
+      if ($user != '0') {
         session_start();
         $_SESSION['status'] = true;
-        $_SESSION['usuario'] = $row['Nome'];
+        $_SESSION['usuario'] = $user;
         echo "Conectado o " . $_SESSION['usuario'];
         //header("location: ");
       } else {
