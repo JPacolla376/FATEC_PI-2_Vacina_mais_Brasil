@@ -1,5 +1,7 @@
 -- Active: 1696890039543@@127.0.0.1@3306@vacinabrasil
 DELIMITER $$
+
+-- function login()
 CREATE OR REPLACE FUNCTION login(cpf VARCHAR(11), senha VARCHAR(60)) RETURNS VARCHAR(60)
 BEGIN
   DECLARE usuario VARCHAR(60);
