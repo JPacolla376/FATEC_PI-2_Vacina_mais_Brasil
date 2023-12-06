@@ -19,7 +19,7 @@ CREATE DATABASE IF NOT EXISTS `vacinabrasil`;
 
 -- Copiando estrutura para tabela vacinabrasil.usuario
 CREATE TABLE IF NOT EXISTS `usuario` (
-  `CPF` int(11) NOT NULL,
+  `CPF` varchar(11) NOT NULL,
   `Nome` varchar(60) NOT NULL,
   `Idade` int(11) NOT NULL,
   `E_mail` varchar(60) DEFAULT NULL,
@@ -43,7 +43,7 @@ CREATE TABLE IF NOT EXISTS `vacinas` (
 
 -- Copiando estrutura para tabela vacinabrasil.vacinou
 CREATE TABLE IF NOT EXISTS `vacinou` (
-  `fk_Usuario_CPF` int(11) NOT NULL,
+  `fk_Usuario_CPF` varchar(11) NOT NULL,
   `fk_Vacinas_ID` int(11) NOT NULL,
   `Data_Vacinado` date NOT NULL,
   KEY `fk_Usuario_CPF` (`fk_Usuario_CPF`),
