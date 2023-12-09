@@ -25,9 +25,9 @@ function mostrarsenha() {
     }
 }
 
-function mostrarsenha2() {
-    var inputpass = document.getElementById('password2');
-    var btnshowpass = document.getElementById('btn-senha2');
+function mostrarsenha3() {
+    var inputpass = document.getElementById('password3');
+    var btnshowpass = document.getElementById('btn-senha3');
 
     if (inputpass.type === 'password') {
         inputpass.type = 'text';
@@ -41,6 +41,7 @@ function mostrarsenha2() {
 }
 
  // APERTAR O X E VOLTAR PARA O LOGIN
-function goToIndex() {
+ function goToIndex() {
     window.location.href = "../HTML/index.html";
   }
+

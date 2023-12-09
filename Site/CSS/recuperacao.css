@@ -20,12 +20,12 @@ body {
     background-color: #fff;
     color: #000;
     border: none;
-    padding: 12px 16px; /* Ajuste o padding conforme necessário */
+    padding: 12px 16px; 
     cursor: pointer;
-    font-size: 24px; /* Ajuste o tamanho da fonte conforme necessário */
+    font-size: 24px; 
     border-radius: 50%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
+  }
   
   .close-button span {
     display: block;
@@ -34,7 +34,7 @@ body {
     text-align: center;
     line-height: 30px;
 }
-  
+
 .wrapper {
     position: relative;
     width: 900px;
@@ -45,7 +45,9 @@ body {
     overflow: hidden;
 }
 
-.wrapper .form-box {
+.wrapper .form-box,
+.wrapper .form-box2,
+.wrapper .form-box3 {
     position: absolute;
     top: 0;
     width: 50%;
@@ -53,39 +55,42 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    transition: .7s ease;
 }
 
-.wrapper .form-box.login{
+.wrapper .form-box.login,
+.wrapper .form-box2.login,
+.wrapper .form-box3.login {
     left: 0;
     padding: 0 60px 0 40px;
 }
 
-.wrapper .form-box.login .animation{
-    transform: translateX(0);
-    opacity: 1;
-    filter: blur(0);
-    transition: .7s ease;
-    transition-delay: calc(.1s * var(--j));
-}
-
-.wrapper.active .form-box.login .animation{
+.wrapper.active .form-box.login,
+.wrapper.active .form-box2.login,
+.wrapper.active .form-box3.login {
     transform: translateX(-120%);
     opacity: 0;
     filter: blur(10px);
     transition-delay: calc(.1s * var(--i));
 }
 
-.wrapper .form-box.register{
+.wrapper .form-box.register,
+.wrapper .form-box2.register,
+.wrapper .form-box3.register {
     right: 0;
     padding: 0 40px 0 60px;
     pointer-events: none;
 }
 
-.wrapper.active .form-box.register{
+.wrapper.active .form-box.register,
+.wrapper.active .form-box2.register,
+.wrapper.active .form-box3.register {
     pointer-events: auto;
 }
 
-.wrapper .form-box.register .animation{
+.wrapper .form-box.register .animation,
+.wrapper .form-box2.register .animation,
+.wrapper .form-box3.register .animation {
     transform: translateX(120%);
     opacity: 0;
     filter: blur(10px);
@@ -93,27 +98,37 @@ body {
     transition-delay: calc(.1s * var(--j));
 }
 
-.wrapper.active .form-box.register .animation{
+.wrapper.active .form-box.register .animation,
+.wrapper.active .form-box2.register .animation,
+.wrapper.active .form-box3.register .animation {
     transform: translateX(0);
     opacity: 1;
     filter: blur(0);
     transition-delay: calc(.1s * var(--i));
 }
 
-.form-box h2 {
+.form-box h2,
+.form-box2 h2,
+.form-box3 h2 {
     font-size: 32px;
     color: #fff;
     text-align: center;
+    transition: .7s ease;
+    transition-delay: calc(.1s * var(--j));
 }
 
-.form-box .input-box{
+.form-box .input-box,
+.form-box .input-box2,
+.form-box .input-box3 {
     position: relative;
     width: 100%;
     height: 50px;
     margin: 25px 0;
 }
 
-.input-box {
+.input-box,
+.input-box2,
+.input-box3 {
     position: relative;
     width: 100%;
     height: 50px;
@@ -121,7 +136,9 @@ body {
     color: #fff;
 }
 
-.input-box input {
+.input-box input,
+.input-box2 input,
+.input-box3 input {
     width: 100%;
     height: 100%;
     background: transparent;
@@ -135,9 +152,12 @@ body {
     transition: .5s;
 }
 
-.input-box input:focus, .input-box input:valid{
-   border-bottom-color: #0ef;
+.input-box input:focus, .input-box input:valid,
+.input-box2 input:focus, .input-box2 input:valid,
+.input-box3 input:focus, .input-box3 input:valid {
+    border-bottom-color: #0ef;
 }
+
 
 .input-box label {
     position: absolute;
@@ -150,12 +170,38 @@ body {
     transition: .5s;
 }
 
-.input-box input:focus~label, .input-box input:valid~label{
+.input-box2 label {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%);
+    left: 40px;
+    font-size: 16px;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.input-box3 label {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%);
+    left: 63px;
+    font-size: 16px;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.input-box input:focus~label, .input-box input:valid~label,
+.input-box2 input:focus~label, .input-box2 input:valid~label,
+.input-box3 input:focus~label, .input-box3 input:valid~label {
     top: -5px;
     color: #0ef;
 }
 
-.input-box i {
+.input-box i,
+.input-box2 i,
+.input-box3 i  {
     position: absolute;
     top: 50%;
     right: 0;
@@ -165,9 +211,41 @@ body {
     transition: .5s;
 }
 
-.input-box input:focus~i, .input-box input:valid~i{
+.input-box input:focus~i, .input-box input:valid~i,
+.input-box2 input:focus~i, .input-box2 input:valid~i,
+.input-box2 input:focus~i, .input-box3 input:valid~i {
     color: #0ef;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .btn {
     position: relative;
@@ -185,7 +263,7 @@ body {
     overflow: hidden;
 }
 
-.btn::before{
+.btn::before {
     content: '';
     position: absolute;
     top: -100%;
@@ -197,18 +275,8 @@ body {
     transition: .5s;
 }
 
-.btn:hover::before{
+.btn:hover::before {
     top: 0;
-}
-
-.forgot-password-link a {
-    color: #fff;
-    text-decoration: none;
-}
-
-.forgot-password-link a:hover{
-    color: #0ef;
-    text-decoration: underline;
 }
 
 .form-box .logreg-link {
@@ -228,7 +296,7 @@ body {
     text-decoration: underline;
 }
 
-.wrapper .info-text{
+.wrapper .info-text {
     position: absolute;
     top: 0;
     width: 50%;
@@ -238,13 +306,13 @@ body {
     justify-content: center;
 }
 
-.wrapper .info-text.login{
+.wrapper .info-text.login {
     right: 0;
     text-align: right;
     padding: 0 20px 60px 150px;
 }
 
-.wrapper .info-text.login .animation{
+.wrapper .info-text.login .animation {
     transform: translateX(0);
     opacity: 1;
     filter: blur(0);
@@ -252,25 +320,25 @@ body {
     transition-delay: calc(.1s * var(--j));
 }
 
-.wrapper.active .info-text.login .animation{
+.wrapper.active .info-text.login .animation {
     transform: translateX(120%);
     opacity: 0;
     filter: blur(10px);
     transition-delay: calc(.1s * var(--i));
 }
 
-.wrapper .info-text.register{
+.wrapper .info-text.register {
     left: 0;
     text-align: left;
     padding: 0 150px 60px 40px;
     pointer-events: none;
 }
 
-.wrapper.active .info-text.register{
+.wrapper.active .info-text.register {
     pointer-events: auto;
 }
 
-.wrapper .info-text.register .animation{
+.wrapper .info-text.register .animation {
     transform: translateX(-120%);
     opacity: 0;
     filter: blur(10px);
@@ -278,26 +346,26 @@ body {
     transition-delay: calc(.1s * var(--j));
 }
 
-.wrapper.active .info-text.register .animation{
+.wrapper.active .info-text.register .animation {
     transform: translateX(0);
     opacity: 1;
     filter: blur(0);
     transition-delay: calc(.1s * var(--i));
 }
 
-.info-text h2{
+.info-text h2 {
     font-size: 36px;
     color: #fff;
     line-height: 1.3;
     text-transform: uppercase;
 }
 
-.info-text p{
+.info-text p {
     font-size: 16px;
     color: #fff;
 }
 
-.wrapper .bg-animate{
+.wrapper .bg-animate {
     position: absolute;
     top: -4px;
     right: 0;
@@ -311,12 +379,12 @@ body {
     transition-delay: 1.6s;
 }
 
-.wrapper.active .bg-animate{
+.wrapper.active .bg-animate {
      transform: rotate(0) skewY(0);
      transition-delay: .5s;
 }
 
-.wrapper .bg-animate2{
+.wrapper .bg-animate2 {
     position: absolute;
     top: 100%;
     left: 250px;
@@ -330,13 +398,12 @@ body {
     transition-delay: .5s;
 }
 
-.wrapper.active .bg-animate2{
+.wrapper.active .bg-animate2 {
     transform: rotate(-11deg) skewY(-41deg);
     transition-delay: 1.2s;
 }
 
-
-.bi-eye-fill, .bi-eye-slash{
+.bi-eye-fill, .bi-eye-slash {
     position: absolute;
     top: 30%;
     right: 10px;
@@ -350,7 +417,3 @@ body {
         width: 90%;
     }
 }
-   
-
-
-

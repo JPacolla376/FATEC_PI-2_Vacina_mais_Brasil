@@ -8,11 +8,12 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 </head>
 <body>
-   <div class="wrapper">
-
+    <div class="close-button" onclick="goToIndex()">
+        <span>X</span>
+    </div>
+   <div class="wrapper">>
         <span class="bg-animate"></span>
         <span class="bg-animate2"></span>
-
         <div class="form-box login">
             <h2 class="animation" style="--i:0; --j:21">Login</h2>
             <form action="#">
@@ -27,16 +28,20 @@
                     <label>Senha</label>
                 </div>                
                 <button type="submit" class="btn animation" style="--i:3; --j:24">Entrar</button>
+                <div class="forgot-password-link animation" style="--i:5; --j:26; margin-top: 20px;">
+                    <p><a href="../HTML/recuperacao.html" id="forgot-password">Esqueceu a senha?</a></p>
+                </div>              
                 <div class="logreg-link animation" style="--i:4; --j:25">
                     <p>Não tem uma conta?<a href="#" class="register-link">Clique aqui</a></p>
                 </div>
             </form>
         </div>
         <div class="info-text login">
-            <h2 class="animation"style="--i:0; --j:23">Seja Bem Vindo!</h2>
-            <p class="animation"style="--i:1; --j:24">Escreva aqui algum texto!!! </p>
+            <h2 class="animation"style="--i:0; --j:23">Bem-vindo de volta!</h2>
+            <p class="animation"style="--i:1; --j:24">
+                Estamos felizes em tê-lo conosco novamente. Faça o login para explorar seu espaço personalizado ao acesso de suas vacinas.
+            </p>
         </div>
-
         <div class="form-box register">
             <h2 class="animation" style="--i:17; --j:0">Cadastro</h2>
             <form action="#">
@@ -72,8 +77,8 @@
             </form>
         </div>
         <div class="info-text register">
-            <h2 class="animation"style="--i:17; --j:0">Seja Bem Vindo!</h2>
-            <p class="animation"style="--i:18; --j:1">Escreva aqui algum texto!!! </p>
+            <h2 class="animation"style="--i:17; --j:0">Não tem uma conta??</h2>
+            <p class="animation"style="--i:18; --j:1"> Crie uma agora mesmo e descubra as possibilidades personalizadas esperando por você.</p>
         </div>
    </div>
    <script src="../JAVASCRIPT/login.js"></script>
