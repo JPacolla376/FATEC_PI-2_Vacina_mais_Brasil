@@ -1,135 +1,61 @@
-body{
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 100%;
+
+/*-------------------Layout------------------*/
+html, body, #home{
     height: 100%;
-    margin: 0;
+    overflow-x: hidden;
 }
 
-ul{
-    padding: 0px !important;
+body{
+    background-attachment: fixed;
+    margin-top: 60px;
+    background-color: #E6E6E6;
 }
 
-.menu-principal {
-    width: 100%;
-    background-color: #252323;
-    height: 60px;
+/*---------------BARRA DE NAVEGAÇÃO---------------------*/
+nav.navbar-tranparente{
+    padding: 2px 0;
+    background-color:rgba(0,0,0,0.6) ;
 }
 
-.main {
-    margin: 0 auto;
-    max-width: 980px;
-    position: relative;
+.navbar-collapse > ul {
+    padding-left: 0; 
 }
 
-.header-1 {
-    background-color: #252323;
-    height: 60px;
-    width: 100%;
-    display: flex;
-    justify-content: center; /* Centraliza os itens horizontalmente */
-    align-items: center; /* Centraliza os itens verticalmente */
-}
-
-.logo {
-    padding: 16px;
-    margin-right: 55%;
-}
-
-/*logo img nao tem no video*/
-.logo img {
-    width: 40%;
-}
-
-/*bi nao tem no video*/
-.bi-facebook, .bi-twitter, .bi-whatsapp, .bi-instagram {
-    color: white;
-    font-size: 25px;
-}
-
-.header-2 {
-    background-color: #ffffff;
-    width: 980px;
-    margin: 0 auto;
-    padding: 16px;
-    margin-left: 60px; /*MARGIN DOS CAMPOS INICIO, MINHAS VACINAS....*/
-}
-
-.menu-urls{
-    height: 70px; /*ALTURA DA LINHA*/
-    border-bottom: 3px solid #efefef;
-}
-
-.menu ul li {
+.navbar-collapse > ul > li {
     display: inline-block;
-    color: #efefef;
-    margin-left: 30px;
-    height: 43px; /*ALTURA DA COR AZUL*/
+    height: 45px; /* ALTURA DA COR AZUL */
+    margin-left: 30px; /* Espaçamento entre os itens */
 }
 
-.menu ul li:hover{
-    border-bottom: 2px solid #00bac6;
+.navbar-collapse > ul > li:first-child {
+    margin-left: 0; 
 }
 
-.menu ul li a:hover{
-    color: #00bac6;
+/* Linha embaixo dos menus */
+.navbar-collapse > ul > li:hover {
+    border-bottom: 2px solid #34c9d4;
 }
 
-.menu ul li a {
-    color: #8b8b8b; 
+/* tamanho fonte dos menus */
+.navbar-collapse > ul > li > a {
     text-decoration: none;
     font-size: 18px;
     text-transform: uppercase;
 }
 
-.menu {
-    width: 70%; 
-    float: left;
-    margin-top: 10px; /*ALTURA DOS CAMPOS INICIO, MINHAS VACINAS....*/
+/*regra de estilo para a animação ao passar o mouse nos menus */
+.navbar-light .navbar-nav .nav-link {
+    color: white;
+    margin-top: 5px;
+    transition: color 0.3s ease, transform 0.3s ease; 
 }
 
-.busca {
-    position: relative;
-    width: 30%;
-    float: right;
-    margin-top: 0px; /*ALTURA DA BARRA DE PESQUISA*/
+.navbar-light .navbar-nav .nav-link:hover {
+    color: #34c9d4;
+    transform: translateY(-5px); 
 }
 
-.busca input {
-    padding: 12px;
-    width: 250px;
-    height: 40px;
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-    transition: border-color 0.3s;
-}
-
-.busca input:focus {
-    outline: none;
-    border-color: #8b8b8b; 
-}
-
-.busca i {
-    position: absolute;
-    top: 40%;
-    right: 50px; 
-    transform: translateY(-50%);
-}
-
-.busca i.bi-search {
-    font-size: 20px;
-    color: #8b8b8b;
-}
-
-.col-100{
-    width: 100%;
-    float: left;
-    position: relative;
-}
-
-.shadow{
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1) !important;
-}
+/*---------------INDEX---------------------*/
 
 .profile-tab-nav{
     min-width: 250px;
@@ -148,13 +74,6 @@ ul{
     border-bottom: 1px solid #ddd;
     border-radius: 0;
     color: #133;
-}
-
-.img-circle img {
-    height: 100px;
-    width: 100px;
-    border-radius: 100%;
-    border: 5px solid #fff;
 }
 
 .bi-eye-fill, .bi-eye-slash{
@@ -187,4 +106,110 @@ ul{
 .btn-light:hover{
     background: linear-gradient(to right, rgb(184, 8, 8), rgb(156, 3, 3));
     color: #fff; 
+}
+
+p{
+    font-size: 24px;
+    margin-left: -200px;
+}
+
+/* Make navigation items responsive */
+@media (max-width: 767.98px) {
+    .navbar-collapse > ul > li:hover {
+        border-bottom: none;
+    }
+}
+
+/* Dispositivos extra small (telefones em modo retrato, com menos de 576px)*/
+@media (max-width: 575.98px) {
+    .btn-custon {
+        margin: 10px 15px;
+        font-size: 1em;
+    }
+
+    .navbar-collapse > ul > li {
+        height: auto;
+        margin: 0;
+    }
+
+    .navbar-collapse > ul > li > a {
+        padding: 10px 15px;
+    }
+}
+
+/* Dispositivos small (telefones em modo paisagem, com 576px ou mais)*/
+@media (min-width: 576px) and (max-width: 767.98px) {
+    h1 {
+        font-size: 3em;
+    }
+
+    .btn-custon {
+        margin: 10px 15px;
+        font-size: 1em;
+    }
+
+    .navbar-collapse > ul {
+        padding-left: 0; /* Reset the padding for the ul element */
+    }
+
+    .navbar-collapse > ul > li {
+        display: inline-block;
+        height: auto;
+        margin: 0;
+        vertical-align: middle; /* Align the list items vertically in the middle */
+    }
+
+    .navbar-collapse > ul > li > a {
+        padding: 10px 15px;
+    }
+
+    /* Adjust the specific case for "Início" */
+    .navbar-collapse > ul > li:first-child > a {
+        margin-left: 0; /* Reset margin for the first item */
+    }
+}
+
+/* Dispositivos médios (tablets com 768px ou mais)*/
+@media (min-width: 768px) and (max-width: 991.98px) {
+    h1 {
+        font-size: 4em;
+    }
+
+    .btn-custon {
+        margin: 15px 20px;
+        font-size: 2em;
+    }
+
+    .navbar-collapse > ul > li {
+        height: auto; /* Adjust the height as needed */
+        margin: 0;
+    }
+
+    .navbar-collapse > ul > li > a {
+        padding: 10px 15px;
+    }
+}
+
+/* Dispositivos large (desktops com 992px ou mais)*/
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    h1 {
+        font-size: 5em;
+    }
+
+    .btn-custon {
+        margin: 15px 20px;
+        font-size: 2em;
+    }
+}
+
+/* Dispositivos extra large (desktops grandes com 1200px ou mais)*/
+@media (min-width: 1200px) {
+    h1 {
+        font-size: 6em;
+    }
+
+    .btn-custon {
+        margin: 20px 30px;
+        font-size: 2em;
+    }
 }

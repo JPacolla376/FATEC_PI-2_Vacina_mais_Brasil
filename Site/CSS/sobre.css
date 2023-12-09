@@ -1,3 +1,84 @@
+
+/*-------------------Layout------------------*/
+html, body, #home{
+    height: 100%;
+    overflow-x: hidden;
+}
+
+body{
+    background-attachment: fixed;
+    background-color: #E6E6E6;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #34c9d4 !important;
+}
+
+.navbar-nav .nav-link {
+    transition: color 0.3s ease, transform 0.3s ease; 
+}
+
+.navbar-nav .nav-link:hover {
+    color: #34c9d4 !important;
+    transform: translateY(-5px);
+}
+
+/*---------------BARRA DE NAVEGAÇÃO---------------------*/
+nav.navbar-tranparente{
+    padding: 2px 0;
+    background-color:rgba(0,0,0,0.6) ;
+}
+
+.navbar-collapse > ul {
+    padding-left: 0; 
+}
+
+.navbar-collapse > ul > li {
+    display: inline-block;
+    height: 45px; /* ALTURA DA COR AZUL */
+    margin-left: 30px; /* Espaçamento entre os itens */
+}
+
+.navbar-collapse > ul > li:first-child {
+    margin-left: 0; 
+}
+
+/* Linha embaixo dos menus */
+.navbar-collapse > ul > li:hover {
+    border-bottom: 2px solid #34c9d4;
+}
+
+/* tamanho fonte dos menus */
+.navbar-collapse > ul > li > a {
+    text-decoration: none;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+/*regra de estilo para a animação ao passar o mouse nos menus */
+.navbar-light .navbar-nav .nav-link {
+    color: white;
+    margin-top: 5px;
+    transition: color 0.3s ease, transform 0.3s ease; 
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+    color: #34c9d4;
+    transform: translateY(-5px); 
+}
+
+#scroll-link{
+    color: #fff;
+}
+
+#scroll-link:hover{
+    color: #34c9d4;
+}
+
+main {
+    margin-top: 250px !important /* Adicione a margem superior desejada */
+}
+
 *{
     box-sizing: border-box;
     padding: 0;
@@ -8,12 +89,6 @@
 }
 
 /*--MAIN--*/
-body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #ddd;
-    color: #333;
-}
-
 .description {
     height: 60vh;
     display: flex;
