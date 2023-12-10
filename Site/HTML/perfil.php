@@ -20,7 +20,7 @@
         <header>
             <nav class="navbar navbar-expand-md navbar-light fixed-top navbar-tranparente">
                 <div class="container">
-                    <a href="index.html" class="navbar-brand">
+                    <a href="index.php" class="navbar-brand">
                         <img src="../IMAGENS/logo.png" width="250">
                     </a>
                     <button class="navbar-toggler" data-toggle="collapse" data-target="#nav-principal">  
@@ -30,20 +30,20 @@
                     <div class="collapse navbar-collapse" id="nav-principal">
                         <ul class="navbar-nav ml-auto">
                             <li class="nav-item">
-                                <a href="../HTML/index.html" class="nav-link">INÍCIO</a>
+                                <a href="../HTML/index.php" class="nav-link">INÍCIO</a>
                             </li>
                             
                             <li class="nav-item">
                                 <a href="#" class="nav-link">MINHAS VACINAS</a>
                             </li>  
                             <li class="nav-item">
-                                <a href="../HTML/index.html#acessar" id="scroll-link-perfil" class="nav-link">CONTEÚDO</a>
+                                <a href="../HTML/index.php#acessar" id="scroll-link-perfil" class="nav-link">CONTEÚDO</a>
                             </li>
                             <li class="nav-item">
-                                <a href="../HTML/perfil.html" class="nav-link">PERFIL</a>
+                                <a href="../HTML/perfil.php" class="nav-link">PERFIL</a>
                             </li>
                             <li class="nav-item">
-                                <a href="../HTML/sobre.html" class="nav-link">SOBRE NÓS</a>
+                                <a href="../HTML/sobre.php" class="nav-link">SOBRE NÓS</a>
                             </li>
                         </ul>
                     </div>

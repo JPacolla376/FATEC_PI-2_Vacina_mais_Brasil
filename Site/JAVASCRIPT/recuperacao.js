@@ -42,6 +42,6 @@ function mostrarsenha3() {
 
  // APERTAR O X E VOLTAR PARA O LOGIN
  function goToIndex() {
-    window.location.href = "../HTML/index.html";
+    window.location.href = "../HTML/index.php";
   }
 

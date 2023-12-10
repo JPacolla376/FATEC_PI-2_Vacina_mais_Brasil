@@ -39,7 +39,7 @@
                 </div>              
                 <button type="submit" class="btn animation">Salvar</button>
                 <div class="logreg-link animation">
-                    <p>Volte para a tela de login <a href="../HTML/login.html" class="register-link">Clique aqui</a></p>
+                    <p>Volte para a tela de login <a href="../HTML/login.php" class="register-link">Clique aqui</a></p>
                 </div>
             </form>
         </div>

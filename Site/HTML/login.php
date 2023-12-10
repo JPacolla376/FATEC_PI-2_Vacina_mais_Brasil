@@ -29,7 +29,7 @@
                 </div>                
                 <button type="submit" class="btn animation" style="--i:3; --j:24">Entrar</button>
                 <div class="forgot-password-link animation" style="--i:5; --j:26; margin-top: 20px;">
-                    <p><a href="../HTML/recuperacao.html" id="forgot-password">Esqueceu a senha?</a></p>
+                    <p><a href="../HTML/recuperacao.php" id="forgot-password">Esqueceu a senha?</a></p>
                 </div>              
                 <div class="logreg-link animation" style="--i:4; --j:25">
                     <p>Não tem uma conta?<a href="#" class="register-link">Clique aqui</a></p>
