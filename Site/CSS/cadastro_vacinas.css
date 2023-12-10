@@ -7,7 +7,6 @@ html, body, #home{
 
 body{
     background-attachment: fixed;
-    margin-top: 60px;
     background-color: #E6E6E6;
 }
 
@@ -55,23 +54,30 @@ nav.navbar-tranparente{
     transform: translateY(-5px); 
 }
 
+#scroll-link{
+    color: #fff;
+}
+
+#scroll-link:hover{
+    color: #34c9d4;
+}
+
+
 /*Fim do Header*/
 
+main{
+    margin-top: 130px;
+    background-color: #E6E6E6;
+}
 .title{
     text-align: center;
 }
 .form-group{
-    margin-left: 2rem;
+    width: 55%;
+    margin: auto;
+    margin-bottom: 20px;
 }
-#vacina_aplicada{
-    width: 45%;
-    float: left;
-}
-#data{
-    width: 45%;
-    float:right;
-    margin-right: 5%;
-}
+
 #botoes{
     text-align: center;
 }
