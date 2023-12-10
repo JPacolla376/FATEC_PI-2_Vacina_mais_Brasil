@@ -12,31 +12,54 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
 </head>
 <body>
-  <header class="menu-principal">
-    <div class="header-1">
-            <div class="logo">
-            <img src="../IMAGEM/logo.png" alt="Logo">
-            <div class="redes-sociais">
-                <ul>
-                    <li><a href="#"><i class="bi bi-facebook"></i></a></li>
-                    <li><a href="#"><i class="bi bi-twitter"></i></a></li>
-                    <li><a href="#"><i class="bi bi-whatsapp"></i></a></li>
-                    <li><a href="#"><i class="bi bi-instagram"></i></a></li>
-                </ul>
+          <!-- CABEÇALHO -->
+          <header class="menu-principal ">
+            <nav class="navbar navbar-expand-md navbar-light fixed-top navbar-tranparente">
+                <div class="container">
+                    <a href="index.html" class="navbar-brand">
+                        <img src="../IMAGENS/logo.png" width="250">
+                    </a>
+                    <button class="navbar-toggler" data-toggle="collapse" data-target="#nav-principal">  
+                        <i class="fas fa-bars text-white"></i>
+                    </button>
+                    
+                    <div class="collapse navbar-collapse" id="nav-principal">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a href="../HTML/index.html" class="nav-link">INÍCIO</a>
+                            </li>
+                            
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">MINHAS VACINAS</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a href="#acessar" id="scroll-link" class="nav-link">CONTEÚDO</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../HTML/perfil.html" class="nav-link">PERFIL</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../HTML/sobre.html" class="nav-link">SOBRE NÓS</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <div class="col-100">
+                <div class="slider-principal hidden">
+                    <div>
+                        <img src="../IMAGENS/Photo1.jpg">
+                    </div>
+                    <div>
+                        <img src="../IMAGENS/tipo2.jpg">
+                    </div>
+                    <div>
+                        <img src="../IMAGENS/edit2.jpg">
+                    </div>
+                </div>        
             </div>
-            </div>
-    </div>
-    <div class="header-2">
-        <div class="menu">
-            <ul>
-                <li><a href="../HTML/index.html">Início</a></li>
-                <li><a href="#">Minhas Vacinas</a></li>
-                <li><a href="#">Conteúdo</a></li>
-                <li><a href="../HTML/perfil.html">Perfil</a></li>
-            </ul>
-        </div>
-    </div>
-</header>
+        </header>
 <main>
     <h1 class="title">Cadastro de vacina</h1>
     <form>
