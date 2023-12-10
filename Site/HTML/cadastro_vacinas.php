@@ -1,22 +1,34 @@
+<?php
+require_once("../PHP/header.php");
+if ($_SESSION['usuario'] != 'Governo Federal') {
+    header("location: index.php");
+    exit;
+}
+?>
 <!DOCTYPE html>
-<html lang="PT-br">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../CSS/cadastro_vacinas.css">
+    <!-- Meta tags Obrigatórias -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/cadastro_vacinas.css">
+    <title>Cadastro Vacinados</title>
 </head>
 <body>
           <!-- CABEÇALHO -->
-          <header class="menu-principal ">
+        <header class="menu-principal ">
             <nav class="navbar navbar-expand-md navbar-light fixed-top navbar-tranparente">
                 <div class="container">
-                    <a href="index.html" class="navbar-brand">
+                    <a href="index.php" class="navbar-brand">
                         <img src="../IMAGENS/logo.png" width="250">
                     </a>
                     <button class="navbar-toggler" data-toggle="collapse" data-target="#nav-principal">  
@@ -26,7 +38,7 @@
                     <div class="collapse navbar-collapse" id="nav-principal">
                         <ul class="navbar-nav ml-auto">
                             <li class="nav-item">
-                                <a href="../HTML/index.html" class="nav-link">INÍCIO</a>
+                                <a href="../HTML/index.php" class="nav-link">INÍCIO</a>
                             </li>
                             
                             <li class="nav-item">
@@ -37,50 +49,28 @@
                                 <a href="#acessar" id="scroll-link" class="nav-link">CONTEÚDO</a>
                             </li>
                             <li class="nav-item">
-                                <a href="../HTML/perfil.html" class="nav-link">PERFIL</a>
+                                <a href="../HTML/perfil.php" class="nav-link"><?php echo $_SESSION["usuario"]; ?></a>
                             </li>
                             <li class="nav-item">
-                                <a href="../HTML/sobre.html" class="nav-link">SOBRE NÓS</a>
+                                <a href="../HTML/sobre.php" class="nav-link">SOBRE NÓS</a>
                             </li>
                         </ul>
                     </div>
                 </div>
             </nav>
-            <div class="col-100">
-                <div class="slider-principal hidden">
-                    <div>
-                        <img src="../IMAGENS/Photo1.jpg">
-                    </div>
-                    <div>
-                        <img src="../IMAGENS/tipo2.jpg">
-                    </div>
-                    <div>
-                        <img src="../IMAGENS/edit2.jpg">
-                    </div>
-                </div>        
-            </div>
         </header>
-<main>
-    <h1 class="title">Cadastro de vacina</h1>
+    <main>
+    <h1 class="title">Cadastro de vacinados</h1>
     <form>
         <div class="form-group">
-            <label>Nome do vacinado</label>
-            <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="Digite aqui!">
-          </div>
-          <div class="form-group">
             <label>CPF do vacinado</label>
             <input type="number" class="form-control" aria-describedby="emailHelp" placeholder="Digite aqui!">
-          </div>
-        <div class="form-group">
-          <label>Endereço de email</label>
-          <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Digite aqui!">
-          <small id="emailHelp" class="form-text text-muted">Nunca vamos compartilhar seu email, com ninguém.</small>
         </div>
-        <div class="form-group" id="vacina_aplicada">
+        <div class="form-group">
             <label>Vacina aplicada</label>
             <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="Digite aqui!">
         </div>
-        <div class="form-group" id="data">
+        <div class="form-group">
             <label>Data da aplicação</label>
             <input type="date" class="form-control" aria-describedby="emailHelp" placeholder="Digite aqui!">
         </div>
@@ -148,6 +138,8 @@
       </div>
   </div>
 </footer>
+</body>
+</html>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46j

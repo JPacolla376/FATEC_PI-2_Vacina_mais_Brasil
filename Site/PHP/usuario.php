@@ -1,7 +1,6 @@
 <?php
 
 include_once("conexao.php");
-include_once("header.php");
 
 class Usuario extends Conectar {
 
@@ -21,15 +20,36 @@ class Usuario extends Conectar {
       $stmt->execute();
       $user = $stmt->fetch();
       if ($user[0] != '0') {
-        session_start();
         $_SESSION['status'] = true;
         $_SESSION['usuario'] = $user[0];
-        echo "Conectado o " . $_SESSION['usuario'];
-        //header("location: ");
+        header("location: ../HTML/index.php");
       } else {
         $_SESSION['status'] = false;
-        echo "NÃO!!!!!";
       }
+    } catch (PDOException $e) {
+      echo $sql . "<br>" . $e->getMessage();
+    }
+  }
+
+  public function mostrarUsuario($nome) {
+    try {
+      $sql = "SELECT * FROM usuario WHERE nome = '$nome'";
+      $stmt = $this->getConn()->prepare($sql);
+      $stmt->execute();
+      $user = $stmt->fetch();
+      $_SESSION['cpf'] = $user[0];
+      $_SESSION['idade'] = $user[2];
+      $_SESSION['email'] = $user[3];
+      $_SESSION['senha'] = $user[4];
+    } catch (PDOException $e) {
+      echo $sql . "<br>" . $e->getMessage();
+    }
+  }
+
+  public function atualizarSenha($cpf, $nvsenha) {
+    try {
+      $sql = "UPDATE usuario SET senha = '$nvsenha' WHERE CPF = '$cpf'";
+      $stmt = $this->getConn()->query($sql);
     } catch (PDOException $e) {
       echo $sql . "<br>" . $e->getMessage();
     }

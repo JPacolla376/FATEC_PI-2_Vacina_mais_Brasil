@@ -1,3 +1,6 @@
+<?php
+require_once("../PHP/header.php");
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -15,7 +18,7 @@
         <header class="menu-principal">
             <nav class="navbar navbar-expand-md navbar-dark fixed-top navbar-tranparente">
                 <div class="container">
-                    <a href="index.html" class="navbar-brand">
+                    <a href="index.php" class="navbar-brand">
                         <img src="../IMAGENS/logo.png" width="250">
                     </a>
                     <button class="navbar-toggler" data-toggle="collapse" data-target="#nav-principal">
@@ -25,7 +28,7 @@
                     <div class="collapse navbar-collapse" id="nav-principal">
                         <ul class="navbar-nav ml-auto">
                             <li class="nav-item">
-                                <a href="../HTML/index.html" class="nav-link text-white">INÍCIO</a>
+                                <a href="../HTML/index.php" class="nav-link text-white">INÍCIO</a>
                             </li>
         
                             <li class="nav-item">
@@ -33,13 +36,13 @@
                             </li>
         
                             <li class="nav-item">
-                                <a href="../HTML/index.html#acessar" id="scroll-link-perfil" class="nav-link text-white">CONTEÚDO</a>
+                                <a href="../HTML/index.php#acessar" id="scroll-link-perfil" class="nav-link text-white">CONTEÚDO</a>
                             </li>
                             <li class="nav-item">
-                                <a href="../HTML/perfil.html" class="nav-link text-white">PERFIL</a>
+                                <a href="../HTML/perfil.php" class="nav-link text-white"><?php echo $_SESSION["usuario"]; ?></a>
                             </li>
                             <li class="nav-item">
-                                <a href="../HTML/sobre.html" class="nav-link text-white">SOBRE NÓS</a>
+                                <a href="../HTML/sobre.php" class="nav-link text-white">SOBRE NÓS</a>
                             </li>
                         </ul>
                     </div>

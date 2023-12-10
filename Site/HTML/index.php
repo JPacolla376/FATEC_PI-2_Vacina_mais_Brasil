@@ -1,3 +1,7 @@
+<?php
+require_once("../PHP/header.php");
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -22,7 +26,7 @@
         <header class="menu-principal ">
             <nav class="navbar navbar-expand-md navbar-light fixed-top navbar-tranparente">
                 <div class="container">
-                    <a href="index.html" class="navbar-brand">
+                    <a href="index.php" class="navbar-brand">
                         <img src="../IMAGENS/logo.png" width="250">
                     </a>
                     <button class="navbar-toggler" data-toggle="collapse" data-target="#nav-principal">  
@@ -32,21 +36,21 @@
                     <div class="collapse navbar-collapse" id="nav-principal">
                         <ul class="navbar-nav ml-auto">
                             <li class="nav-item">
-                                <a href="../HTML/index.html" class="nav-link">INÍCIO</a>
+                                <a href="../HTML/index.php" class="nav-link">INÍCIO</a>
                             </li>
                             
                             <li class="nav-item">
-                                <a href="#" class="nav-link">MINHAS VACINAS</a>
+                                <a href="../HTML/minhasvacinas.php" class="nav-link">MINHAS VACINAS</a>
                             </li>
                         
                             <li class="nav-item">
                                 <a href="#acessar" id="scroll-link" class="nav-link">CONTEÚDO</a>
                             </li>
                             <li class="nav-item">
-                                <a href="../HTML/perfil.html" class="nav-link">PERFIL</a>
+                                <a href="../HTML/perfil.php" class="nav-link"><?php echo $_SESSION["usuario"]; ?></a>
                             </li>
                             <li class="nav-item">
-                                <a href="../HTML/sobre.html" class="nav-link">SOBRE NÓS</a>
+                                <a href="../HTML/sobre.php" class="nav-link">SOBRE NÓS</a>
                             </li>
                         </ul>
                     </div>
@@ -78,7 +82,7 @@
                         Além disso, consulte a agenda disponível no mesmo portal para ficar informado sobre futuras doses, 
                         proporcionando uma gestão eficiente de sua saúde e contribuindo para a prevenção de doenças.
                       </p>
-                      <a href="../HTML/login.html" class="btn btn-primary">Acessar</a>
+                      <a href="../HTML/login.php" class="btn btn-primary">Acessar</a>
                     </div>
                   </div>
                   <div class="col-md-6">
@@ -102,7 +106,7 @@
                                     confiável do histórico de imunização dos cidadãos. Além disso, consulte a agenda para garantir que 
                                     todos estejam atualizados nas próximas doses.
                                 </p>
-                                <a href="#" class="btn btn-primary2" id="acessar">Acessar</a>
+                                <a href="cadastro_vacinas.php" class="btn btn-primary2" id="acessar">Acessar</a>
                             </div>
                         </div>
                     </div>
