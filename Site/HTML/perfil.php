@@ -1,3 +1,23 @@
+<?php
+require_once("../PHP/header.php");
+require_once("../PHP/usuario.php");
+$user = new Usuario();
+
+if ($_SESSION['usuario'] == 'Governo Federal') {
+    header("location: index.php");
+    exit;
+}
+
+$nvsenha = isset($_POST['nvsenha']) ? $_POST['nvsenha'] : "";
+$confirmsenha = isset($_POST['confirmsenha']) ? $_POST['confirmsenha'] : "";
+
+$user->mostrarUsuario($_SESSION['usuario']);
+
+if ($nvsenha == $confirmsenha && !empty($nvsenha) && !empty($confirmsenha)) {
+    $user->atualizarSenha($_SESSION['cpf'], $nvsenha);
+    $user->mostrarUsuario($_SESSION['usuario']);
+}
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -34,13 +54,13 @@
                             </li>
                             
                             <li class="nav-item">
-                                <a href="#" class="nav-link">MINHAS VACINAS</a>
+                                <a href="../HTML/minhasvacinas.php" class="nav-link">MINHAS VACINAS</a>
                             </li>  
                             <li class="nav-item">
                                 <a href="../HTML/index.php#acessar" id="scroll-link-perfil" class="nav-link">CONTEÚDO</a>
                             </li>
                             <li class="nav-item">
-                                <a href="../HTML/perfil.php" class="nav-link">PERFIL</a>
+                                <a href="../HTML/perfil.php" class="nav-link"><?php echo $_SESSION["usuario"]; ?></a>
                             </li>
                             <li class="nav-item">
                                 <a href="../HTML/sobre.php" class="nav-link">SOBRE NÓS</a>
@@ -59,7 +79,7 @@
                                     <p><strong>Olá,</strong></p>
                                 </label>
                             </div>                                                   
-                            <h4 class="text-center">Wesley Gustavo Kilian</h4>
+                            <h4 class="text-center"><?php echo $_SESSION["usuario"]; ?></h4>
                         </div>
                         <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                             <a class="nav-link active" id="account-tab" data-toggle="pill" href="#account" role="tab" aria-controls="account" aria-selected="true">
@@ -83,27 +103,24 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Nome Completo</label>
-                                        <input type="text" class="form-control" value="wesley Gustavo Kilian">
+                                        <input type="text" readonly class="form-control" value="<?php echo $_SESSION["usuario"]; ?>">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Email</label>
-                                        <input type="text" class="form-control" value="Wesleygukilian@gmail.com">
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Telefone</label>
-                                        <input type="text" class="form-control" value="+55 (19) 123456789">
+                                        <input type="text" readonly class="form-control" value="<?php echo $_SESSION["email"]; ?>">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>CPF</label>
-                                        <input type="text" class="form-control" value="468.306.598.87">
+                                        <input type="text" readonly class="form-control" value="<?php echo $_SESSION["cpf"]; ?>">
                                     </div>
                                 </div>
+                                <form action="../PHP/sair.php" method="post" class="mx-auto">
+                                    <button class="btn btn-light" >Sair da Conta</button>
+                                </form>
                             </div>
                         </div>
                         <div class="tab-pane fade" id="password" role="tabpanel" aria-labelleby="password-tab">
@@ -112,30 +129,32 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Senha Atual</label>
-                                        <input type="password" class="form-control" readonly>
+                                        <input type="text" class="form-control" readonly value="<?php echo $_SESSION["senha"]; ?>">
                                     </div>
                                 </div>
-                            </div>                        
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <i class="bi bi-eye-fill" id="btn-senha-nova" onclick="mostrarSenha('senha-nova')"></i>
-                                        <label>Nova Senha</label>
-                                        <input type="password" class="form-control" id="senha-nova">
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <i class="bi bi-eye-fill" id="btn-senha-confirmada" onclick="mostrarSenha('senha-confirmada')"></i>
-                                        <label>Confirme a Senha</label>
-                                        <input type="password" class="form-control" id="senha-confirmada">
-                                    </div>
-                                </div>
-                            </div>                        
-                            <div>
-                                <button class="btn btn-primary">Salvar</button>
-                                <button class="btn btn-light">Cancelar</button>
                             </div>
+                            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <i class="bi bi-eye-fill" id="btn-senha-nova" onclick="mostrarSenha('senha-nova')"></i>
+                                            <label>Nova Senha</label>
+                                            <input type="password" class="form-control" id="senha-nova" name="nvsenha">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <i class="bi bi-eye-fill" id="btn-senha-confirmada" onclick="mostrarSenha('senha-confirmada')"></i>
+                                            <label>Confirme a Senha</label>
+                                            <input type="password" class="form-control" id="senha-confirmada" name="confirmsenha">
+                                        </div>
+                                    </div>
+                                </div>                        
+                                <div>
+                                    <button class="btn btn-primary">Salvar</button>
+                                    <button class="btn btn-light">Cancelar</button>
+                                </div>
+                            </form>
                         </div>
                         <div class="tab-pane fade" id="Notification" role="tabpanel" aria-labelledby="Notification-tab">
                             <h3 class="mb-4">Configurações de notificação</h3>

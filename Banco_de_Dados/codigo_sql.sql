@@ -17,6 +17,8 @@
 -- criando o banco de dados
 CREATE DATABASE IF NOT EXISTS `vacinabrasil`;
 
+USE `vacinabrasil`;
+
 -- Copiando estrutura para tabela vacinabrasil.usuario
 CREATE TABLE IF NOT EXISTS `usuario` (
   `CPF` varchar(11) NOT NULL,

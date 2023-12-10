@@ -1,3 +1,10 @@
+<?php
+require_once("../PHP/header.php");
+if ($_SESSION['usuario'] == 'Governo Federal') {
+    header("location: index.php");
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -43,7 +50,7 @@
                                 <a href="#acessar" id="scroll-link" class="nav-link">CONTEÚDO</a>
                             </li>
                             <li class="nav-item">
-                                <a href="../HTML/perfil.php" class="nav-link">PERFIL</a>
+                                <a href="../HTML/perfil.php" class="nav-link"><?php echo $_SESSION["usuario"]; ?></a>
                             </li>
                             <li class="nav-item">
                                 <a href="../HTML/sobre.php" class="nav-link">SOBRE NÓS</a>

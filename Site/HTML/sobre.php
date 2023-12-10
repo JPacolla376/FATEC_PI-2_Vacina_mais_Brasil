@@ -1,3 +1,6 @@
+<?php
+require_once("../PHP/header.php");
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -36,7 +39,7 @@
                                 <a href="../HTML/index.php#acessar" id="scroll-link-perfil" class="nav-link text-white">CONTEÚDO</a>
                             </li>
                             <li class="nav-item">
-                                <a href="../HTML/perfil.php" class="nav-link text-white">PERFIL</a>
+                                <a href="../HTML/perfil.php" class="nav-link text-white"><?php echo $_SESSION["usuario"]; ?></a>
                             </li>
                             <li class="nav-item">
                                 <a href="../HTML/sobre.php" class="nav-link text-white">SOBRE NÓS</a>

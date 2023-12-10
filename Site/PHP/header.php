@@ -1,13 +1,12 @@
 <?php
-/*session_start();
+session_start();
 
 if(!isset($_SESSION['status'])){
-  header("location: ../teste.php");
+  header("location: ../HTML/login.php");
   exit;
 }
 
 if(!$_SESSION['status']){
-  header("location: ../teste.php");
+  header("location: ../HTML/login.php");
   exit;
 }
-*/

@@ -1,3 +1,7 @@
+<?php
+require_once("../PHP/header.php");
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -36,14 +40,14 @@
                             </li>
                             
                             <li class="nav-item">
-                                <a href="../HTML/cadastro_vacinas.php" class="nav-link">MINHAS VACINAS</a>
+                                <a href="../HTML/minhasvacinas.php" class="nav-link">MINHAS VACINAS</a>
                             </li>
                         
                             <li class="nav-item">
                                 <a href="#acessar" id="scroll-link" class="nav-link">CONTEÚDO</a>
                             </li>
                             <li class="nav-item">
-                                <a href="../HTML/perfil.php" class="nav-link">PERFIL</a>
+                                <a href="../HTML/perfil.php" class="nav-link"><?php echo $_SESSION["usuario"]; ?></a>
                             </li>
                             <li class="nav-item">
                                 <a href="../HTML/sobre.php" class="nav-link">SOBRE NÓS</a>
@@ -102,7 +106,7 @@
                                     confiável do histórico de imunização dos cidadãos. Além disso, consulte a agenda para garantir que 
                                     todos estejam atualizados nas próximas doses.
                                 </p>
-                                <a href="#" class="btn btn-primary2" id="acessar">Acessar</a>
+                                <a href="cadastro_vacinas.php" class="btn btn-primary2" id="acessar">Acessar</a>
                             </div>
                         </div>
                     </div>
