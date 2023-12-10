@@ -1,106 +1,60 @@
-/*inicio do Header*/
-body {
-    width: 100%;
+
+/*-------------------Layout------------------*/
+html, body, #home{
     height: 100%;
-    margin: 0;
-
+    overflow-x: hidden;
 }
 
-ul{
-    padding: 0px !important;
+body{
+    background-attachment: fixed;
+    margin-top: 60px;
+    background-color: #E6E6E6;
 }
 
-.menu-principal {
-    width: 100%;
-    justify-content: space-between;
-    align-items: center;
-
+/*---------------BARRA DE NAVEGAÇÃO---------------------*/
+nav.navbar-tranparente{
+    padding: 2px 0;
+    background-color:rgba(0,0,0,0.6) ;
 }
 
-.main {
-    margin: 0 auto;
-    max-width: 980px;
-    position: relative;
+.navbar-collapse > ul {
+    padding-left: 0; 
 }
 
-.header-1 {
-    background-color: #252323;
-    padding-top: 25px;
-    height: 70px;
-    width: 100%;
-    justify-content: flex-start; /* Centraliza os itens horizontalmente */
-    align-items: center; /* Centraliza os itens verticalmente */
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-    height: 3px;
-    width: 2rem;
-}
-
-.redes-sociais {
-    color: 000;
-    margin-left: 20px; /* ou qualquer outra margem desejada */
-}
-.redes-sociais ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-}
-
-.redes-sociais ul li {
-    margin-right: 10px; /* ou qualquer outra margem desejada entre os ícones */
-}
-
-.redes-sociais a {
-    text-decoration: none;
-    color: #fff; /* ou a cor desejada para os ícones */
-}
-
-.header-2 {
-    display: block;
-    background-color: #ffffff;
-    width: 980px;
-    height: 75px;
-    margin: 0 auto;
-    padding: 16px;
-    margin-left: 30px; /*MARGIN DOS CAMPOS INICIO, MINHAS VACINAS....*/
-}
-
-.menu-urls{
-    
-    border-bottom: 3px solid #efefef;
-}
-
-.menu ul li {
+.navbar-collapse > ul > li {
     display: inline-block;
-    color: #efefef;
-    margin-left: 30px;
-
+    height: 45px; /* ALTURA DA COR AZUL */
+    margin-left: 30px; /* Espaçamento entre os itens */
 }
 
-.menu ul li:hover{
-    border-bottom: 2px solid #00bac6;
+.navbar-collapse > ul > li:first-child {
+    margin-left: 0; 
 }
 
-.menu ul li a:hover{
-    color: #00bac6;
+/* Linha embaixo dos menus */
+.navbar-collapse > ul > li:hover {
+    border-bottom: 2px solid #34c9d4;
 }
 
-.menu ul li a {
-    color: #8b8b8b; 
+/* tamanho fonte dos menus */
+.navbar-collapse > ul > li > a {
     text-decoration: none;
-    font-size: 15px;
+    font-size: 18px;
     text-transform: uppercase;
 }
 
-.menu {
-    width: 70%; 
-    float: left;
-    margin-top: 10px; /*ALTURA DOS CAMPOS INICIO, MINHAS VACINAS....*/
+/*regra de estilo para a animação ao passar o mouse nos menus */
+.navbar-light .navbar-nav .nav-link {
+    color: white;
+    margin-top: 5px;
+    transition: color 0.3s ease, transform 0.3s ease; 
 }
+
+.navbar-light .navbar-nav .nav-link:hover {
+    color: #34c9d4;
+    transform: translateY(-5px); 
+}
+
 /*Fim do Header*/
 
 .title{
@@ -121,19 +75,6 @@ ul{
 #botoes{
     text-align: center;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /*inicio do footer*/
 
