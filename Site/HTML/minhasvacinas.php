@@ -1,7 +1,7 @@
 <?php
 require_once("../PHP/header.php");
 require_once("../PHP/vacinou.php");
-if ($_SESSION['usuario'] == 'Governo Federal') {
+if ($_SESSION['usuario'] == 'SAIR DA CONTA PROFISSIONAL') {
     header("location: cadastro_vacinas.php");
     exit;
 }

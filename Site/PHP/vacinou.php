@@ -41,7 +41,7 @@ class Vacinou extends Conectar {
         while ($row = $stmt->fetch()) {
           echo "<div class='col-lg-4 col-md-6 d-flex align-items-stretch'>" .
                "<div class='icon-box'>" .
-               "<div class='icon'> <i class='bi bi-eyedropper'></i></div>" .
+               "<div class='icon'> <i class='fas fa-syringe'></i></div>" .
                "<h4>" . $row["Nome"] . "</h4>" . 
                "<h5> Origem: " . $row["Origem"] . "</h5>" .
                "<h5> Data Vacinado: " . $row["Data_Vacinado"] . "</h5>" .
@@ -51,7 +51,7 @@ class Vacinou extends Conectar {
       } else {
         echo "<div class='col-lg-4 col-md-6 d-flex align-items-stretch'>" .
              "<div class='icon-box'>" .
-             "<div class='icon'> <i class='bi bi-eyedropper'></i></div>" .
+             "<div class='icon'> <i class='fas fa-syringe'></i></div>" .
              "<h5>NÃO TEM VACINAS</h5>" .
              "</div>" .
              "</div>";

@@ -1,7 +1,7 @@
 <?php
 require_once("../PHP/header.php");
 require_once("../PHP/vacinou.php");
-if ($_SESSION['usuario'] != 'Governo Federal') {
+if ($_SESSION['usuario'] != 'SAIR DA CONTA PROFISSIONAL') {
     header("location: index.php");
     exit;
 }
@@ -15,6 +15,10 @@ $vacinado = new Vacinou();
 if (!empty($cpf) ) {
     $vacinado->inserirVacinaUsuario($cpf, $idVac, $data);
 }
+
+unset($cpf);
+unset($idVac);
+unset($data);
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -52,6 +56,9 @@ if (!empty($cpf) ) {
                                 <a href="../HTML/index.php" class="nav-link">INÍCIO</a>
                             </li>
                             <li class="nav-item">
+                                <a href="../HTML/vacinas.php" id="scroll-link" class="nav-link">CADASTRAR VACINAS</a>
+                            </li>
+                            <li class="nav-item">
                                 <a href="../HTML/index.php#acessar" id="scroll-link" class="nav-link">CONTEÚDO</a>
                             </li>
                             <li class="nav-item">
@@ -70,7 +77,7 @@ if (!empty($cpf) ) {
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
         <div class="form-group">
             <label>CPF do vacinado</label>
-            <input type="number" class="form-control" aria-describedby="emailHelp" name="cpf" required>
+            <input type="text" class="form-control" aria-describedby="emailHelp" name="cpf" required>
         </div>
         <div class="form-group">
             <label>Vacina aplicada</label>
@@ -81,7 +88,6 @@ if (!empty($cpf) ) {
             <input type="text" class="form-control" aria-describedby="emailHelp" name="data" placeholder="Ex: 2023-12-25" required>
         </div>
         <div id="botoes">
-            <button type="submit" class="btn btn-danger">Voltar</button>
             <button type="submit" class="btn btn-primary">Enviar</button>
         </div>
     </form>

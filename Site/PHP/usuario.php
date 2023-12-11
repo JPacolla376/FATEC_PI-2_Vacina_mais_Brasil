@@ -15,11 +15,11 @@ class Usuario extends Conectar {
 
   public function login($cpf, $senha) {
     try {
-      $sql = "SELECT login('$cpf', '$senha')";
+      $sql = "CALL login('$cpf', '$senha')";
       $stmt = $this->getConn()->prepare($sql);
       $stmt->execute();
       $user = $stmt->fetch();
-      if ($user[0] != '0') {
+      if ($user[0] != null) {
         $_SESSION['status'] = true;
         $_SESSION['usuario'] = $user[0];
         header("location: ../HTML/index.php");
