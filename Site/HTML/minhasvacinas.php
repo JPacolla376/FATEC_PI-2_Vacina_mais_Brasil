@@ -1,9 +1,12 @@
 <?php
 require_once("../PHP/header.php");
+require_once("../PHP/vacinou.php");
 if ($_SESSION['usuario'] == 'Governo Federal') {
-    header("location: index.php");
+    header("location: cadastro_vacinas.php");
     exit;
 }
+
+$vacinado = new Vacinou();
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -47,7 +50,7 @@ if ($_SESSION['usuario'] == 'Governo Federal') {
                             </li>
                         
                             <li class="nav-item">
-                                <a href="#acessar" id="scroll-link" class="nav-link">CONTEÚDO</a>
+                                <a href="../HTML/index.php#acessar" id="scroll-link-perfil" class="nav-link">CONTEÚDO</a>
                             </li>
                             <li class="nav-item">
                                 <a href="../HTML/perfil.php" class="nav-link"><?php echo $_SESSION["usuario"]; ?></a>
@@ -62,62 +65,9 @@ if ($_SESSION['usuario'] == 'Governo Federal') {
         </header>
         <main>
             <section id="services" class="services my-4">
-                <div class="container">   
+                <div class="container">
                     <div class="row">
-                        <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-                            <div class="icon-box">
-                                <div class="icon"> <i class="bi bi-file-earmark-medical"></i></div>
-                                <h4><a>Registro Eficiente</a></h4>
-                                <p>Nome da vacina: "variável"</p>
-                                <p>Descrição: "variável</p>
-                                <p>data de aplicação: "variável"</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-                            <div class="icon-box">
-                                <div class="icon"><i class="bi bi-file-earmark-medical"></i></div>
-                                <h4><a>Registro Eficiente</a></h4>
-                                <p>Nome da vacina: "variável"</p>
-                                <p>Descrição: "variável</p>
-                                <p>data de aplicação: "variável"</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-                            <div class="icon-box">
-                                <div class="icon"> <i class="bi bi-file-earmark-medical"></i></div>
-                                <h4><a>Registro Eficiente</a></h4>
-                                <p>Nome da vacina: "variável"</p>
-                                <p>Descrição: "variável</p>
-                                <p>data de aplicação: "variável"</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-                            <div class="icon-box">
-                                <div class="icon"> <i class="bi bi-file-earmark-medical"></i></div>
-                                <h4><a>Registro Eficiente</a></h4>
-                                <p>Nome da vacina: "variável"</p>
-                                <p>Descrição: "variável</p>
-                                <p>data de aplicação: "variável"</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-                            <div class="icon-box">
-                                <div class="icon"> <i class="bi bi-file-earmark-medical"></i></div>
-                                <h4><a>Registro Eficiente</a></h4>
-                                <p>Nome da vacina: "variável"</p>
-                                <p>Descrição: "variável</p>
-                                <p>data de aplicação: "variável"</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-                            <div class="icon-box">
-                                <div class="icon"> <i class="bi bi-file-earmark-medical"></i></div>
-                                <h4><a>Registro Eficiente</a></h4>
-                                <p>Nome da vacina: "variável"</p>
-                                <p>Descrição: "variável</p>
-                                <p>data de aplicação: "variável"</p>
-                            </div>
-                        </div>
+                        <?php $vacinado->MostrarVacinasTomadas();?>
                     </div>
                 </div>
             </section>

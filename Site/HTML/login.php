@@ -57,7 +57,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <span class="bg-animate2"></span>
         <div class="form-box login">
             <h2 class="animation" style="--i:0; --j:21">Login</h2>
-            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
+            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                 <div class="input-box animation" style="--i:1; --j:22">
                     <input type="text" name="cpflog" required>
                     <label>CPF</label>
