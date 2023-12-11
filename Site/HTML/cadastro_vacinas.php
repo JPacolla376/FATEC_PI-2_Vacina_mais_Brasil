@@ -1,8 +1,19 @@
 <?php
 require_once("../PHP/header.php");
+require_once("../PHP/vacinou.php");
 if ($_SESSION['usuario'] != 'Governo Federal') {
     header("location: index.php");
     exit;
+}
+
+$cpf = isset($_POST['cpf']) ? $_POST['cpf'] : "";
+$idVac = isset($_POST['idVac']) ? $_POST['idVac'] : "";
+$data = isset($_POST['data']) ? $_POST['data'] : "";
+
+$vacinado = new Vacinou();
+
+if (!empty($cpf) ) {
+    $vacinado->inserirVacinaUsuario($cpf, $idVac, $data);
 }
 ?>
 <!DOCTYPE html>
@@ -40,13 +51,8 @@ if ($_SESSION['usuario'] != 'Governo Federal') {
                             <li class="nav-item">
                                 <a href="../HTML/index.php" class="nav-link">INÍCIO</a>
                             </li>
-                            
                             <li class="nav-item">
-                                <a href="#" class="nav-link">MINHAS VACINAS</a>
-                            </li>
-                        
-                            <li class="nav-item">
-                                <a href="#acessar" id="scroll-link" class="nav-link">CONTEÚDO</a>
+                                <a href="../HTML/index.php#acessar" id="scroll-link" class="nav-link">CONTEÚDO</a>
                             </li>
                             <li class="nav-item">
                                 <a href="../HTML/perfil.php" class="nav-link"><?php echo $_SESSION["usuario"]; ?></a>
@@ -61,22 +67,22 @@ if ($_SESSION['usuario'] != 'Governo Federal') {
         </header>
     <main>
     <h1 class="title">Cadastro de vacinados</h1>
-    <form>
+    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
         <div class="form-group">
             <label>CPF do vacinado</label>
-            <input type="number" class="form-control" aria-describedby="emailHelp" placeholder="Digite aqui!">
+            <input type="number" class="form-control" aria-describedby="emailHelp" name="cpf" required>
         </div>
         <div class="form-group">
             <label>Vacina aplicada</label>
-            <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="Digite aqui!">
+            <input type="number" class="form-control" aria-describedby="emailHelp" name="idVac" required>
         </div>
         <div class="form-group">
             <label>Data da aplicação</label>
-            <input type="date" class="form-control" aria-describedby="emailHelp" placeholder="Digite aqui!">
+            <input type="text" class="form-control" aria-describedby="emailHelp" name="data" placeholder="Ex: 2023-12-25" required>
         </div>
         <div id="botoes">
-        <button type="submit" class="btn btn-danger">Voltar</button>
-        <button type="submit" class="btn btn-primary">Enviar</button>
+            <button type="submit" class="btn btn-danger">Voltar</button>
+            <button type="submit" class="btn btn-primary">Enviar</button>
         </div>
     </form>
 </main>

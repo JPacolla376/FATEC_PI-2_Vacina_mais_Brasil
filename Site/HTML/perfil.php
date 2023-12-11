@@ -129,7 +129,7 @@ if ($nvsenha == $confirmsenha && !empty($nvsenha) && !empty($confirmsenha)) {
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Senha Atual</label>
-                                        <input type="text" class="form-control" readonly value="<?php echo $_SESSION["senha"]; ?>">
+                                        <input type="password" class="form-control" readonly value="<?php echo $_SESSION["senha"]; ?>">
                                     </div>
                                 </div>
                             </div>
