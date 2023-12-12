@@ -40,8 +40,8 @@ body {
     width: 900px;
     height: 550px;
     background: transparent;
-    border: 2px solid #0ef;
-    box-shadow: 0 0 25px #0ef;
+    border: 2px solid #009E20;
+    box-shadow: 0 0 25px #009E20;
     overflow: hidden;
 }
 
@@ -155,7 +155,7 @@ body {
 .input-box input:focus, .input-box input:valid,
 .input-box2 input:focus, .input-box2 input:valid,
 .input-box3 input:focus, .input-box3 input:valid {
-    border-bottom-color: #0ef;
+    border-bottom-color: #009E20;
 }
 
 
@@ -196,7 +196,7 @@ body {
 .input-box2 input:focus~label, .input-box2 input:valid~label,
 .input-box3 input:focus~label, .input-box3 input:valid~label {
     top: -5px;
-    color: #0ef;
+    color: #009E20;
 }
 
 .input-box i,
@@ -214,45 +214,15 @@ body {
 .input-box input:focus~i, .input-box input:valid~i,
 .input-box2 input:focus~i, .input-box2 input:valid~i,
 .input-box2 input:focus~i, .input-box3 input:valid~i {
-    color: #0ef;
+    color: #009E20;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .btn {
     position: relative;
     width: 100%;
     height: 45px;
     background: transparent;
-    border: 2px solid #0ef;
+    border: 2px solid #009E20;
     outline: none;
     border-radius: 40px;
     cursor: pointer;
@@ -270,7 +240,7 @@ body {
     left: 0;
     width: 100%;
     height: 300%;
-    background: linear-gradient(#081b29, #0ef, #081b29, #0ef);
+    background: linear-gradient(#081b29,#009E20, #081b29, #009E20);
     z-index: -1;
     transition: .5s;
 }
@@ -287,7 +257,7 @@ body {
 }
 
 .logreg-link p a {
-    color: #0ef;
+    color: #009E20;
     text-decoration: none;
     font-weight: 600;
 }
@@ -371,8 +341,8 @@ body {
     right: 0;
     width: 950px;
     height: 700px;
-    background: linear-gradient(45deg, #081b29, #0ef);
-    border-bottom: 3px solid #0ef;
+    background: linear-gradient(45deg, #081b29,#009E20);
+    border-bottom: 3px solid #009E20;
     transform: rotate(10deg) skewY(40deg);
     transform-origin: bottom right;
     transition: 1.5s ease;
@@ -391,7 +361,7 @@ body {
     width: 950px;
     height: 850px;
     background: #081b29;
-    border-top: 3px solid #0ef;
+    border-top: 3px solid #009E20;
     transform: rotate(0) skewY(0);
     transform-origin: bottom left;
     transition: 1.5s ease;
