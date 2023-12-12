@@ -1,0 +1,117 @@
+
+/*-------------------Layout------------------*/
+html, body, #home{
+    height: 100%;
+    overflow-x: hidden;
+}
+
+body{
+    background-attachment: fixed;
+    background-color: #E6E6E6;
+}
+
+/*---------------BARRA DE NAVEGAÇÃO---------------------*/
+nav.navbar-tranparente{
+    padding: 2px 0;
+    background-color:rgba(0,0,0,0.6) ;
+}
+
+.navbar-collapse > ul {
+    padding-left: 0; 
+}
+
+.navbar-collapse > ul > li {
+    display: inline-block;
+    height: 45px; /* ALTURA DA COR AZUL */
+    margin-left: 30px; /* Espaçamento entre os itens */
+}
+
+.navbar-collapse > ul > li:first-child {
+    margin-left: 0; 
+}
+
+/* Linha embaixo dos menus */
+.navbar-collapse > ul > li:hover {
+    border-bottom: 2px solid #34c9d4;
+}
+
+/* tamanho fonte dos menus */
+.navbar-collapse > ul > li > a {
+    text-decoration: none;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+/*regra de estilo para a animação ao passar o mouse nos menus */
+.navbar-light .navbar-nav .nav-link {
+    color: white;
+    margin-top: 5px;
+    transition: color 0.3s ease, transform 0.3s ease; 
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+    color: #34c9d4;
+    transform: translateY(-5px); 
+}
+
+#scroll-link{
+    color: #fff;
+}
+
+#scroll-link:hover{
+    color: #34c9d4;
+}
+
+
+/*Fim do Header*/
+
+main{
+    margin-top: 130px;
+    background-color: #E6E6E6;
+}
+.title{
+    text-align: center;
+}
+.form-group{
+    width: 55%;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+#botoes{
+    text-align: center;
+}
+
+/*inicio do footer*/
+
+/* Estilize o rodapé */
+footer.cor-unica-rodape {
+margin-top: 2rem;
+background-color: hsl(0, 3%, 14%) !important; /* Altere para a cor desejada */
+bottom: 0;
+padding: 20px 0; 
+overflow-x: hidden;
+}
+
+.email-link {
+color: white; /* ou a cor desejada para o link */
+text-decoration: none; /* Remova a decoração de texto padrão */
+}
+
+.email-link:hover {
+color: white; /* ou a cor desejada para o link */
+}
+
+.btn-floating i {
+color: white; /* Define a cor branca para os ícones */
+font-size: 22px; /* Ajusta o tamanho dos ícones conforme necessário */
+}
+@media (max-width: 768px) {
+.redes-sociais {
+    width: 100%;
+    float: none;
+    text-align: center;
+    margin-top: 10px; /* Adiciona um espaço acima das redes sociais em telas menores */
+}
+}
+/*fim do footer*/

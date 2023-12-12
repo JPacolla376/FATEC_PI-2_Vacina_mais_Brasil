@@ -1,0 +1,215 @@
+
+/*-------------------Layout------------------*/
+html, body, #home{
+    height: 100%;
+    overflow-x: hidden;
+}
+
+body{
+    background-attachment: fixed;
+    margin-top: 60px;
+    background-color: #E6E6E6;
+}
+
+/*---------------BARRA DE NAVEGAÇÃO---------------------*/
+nav.navbar-tranparente{
+    padding: 2px 0;
+    background-color:rgba(0,0,0,0.6) ;
+}
+
+.navbar-collapse > ul {
+    padding-left: 0; 
+}
+
+.navbar-collapse > ul > li {
+    display: inline-block;
+    height: 45px; /* ALTURA DA COR AZUL */
+    margin-left: 30px; /* Espaçamento entre os itens */
+}
+
+.navbar-collapse > ul > li:first-child {
+    margin-left: 0; 
+}
+
+/* Linha embaixo dos menus */
+.navbar-collapse > ul > li:hover {
+    border-bottom: 2px solid #34c9d4;
+}
+
+/* tamanho fonte dos menus */
+.navbar-collapse > ul > li > a {
+    text-decoration: none;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+/*regra de estilo para a animação ao passar o mouse nos menus */
+.navbar-light .navbar-nav .nav-link {
+    color: white;
+    margin-top: 5px;
+    transition: color 0.3s ease, transform 0.3s ease; 
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+    color: #34c9d4;
+    transform: translateY(-5px); 
+}
+
+/*---------------INDEX---------------------*/
+
+.profile-tab-nav{
+    min-width: 250px;
+}
+
+.tab-content{
+    flex: 1;
+}
+
+.form-group{
+    margin-bottom: 1.5rem;
+}
+
+.nav-pills a.nav-link{
+    padding: 15px 20px;
+    border-bottom: 1px solid #ddd;
+    border-radius: 0;
+    color: #133;
+}
+
+.bi-eye-fill, .bi-eye-slash{
+    position: absolute;
+    top: 55%;
+    right: 25px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 17px;
+}
+
+.btn-primary{
+    background: linear-gradient(to right, #54ce3c, #197c0c);
+    border: none;
+    color: #fff; 
+    width: 85px;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(to right, #33a01d, #125a08); 
+}
+
+.btn-light{
+    background: linear-gradient(to right, rgb(212, 22, 22), rgb(190, 2, 2));
+    border: none;
+    color: #fff; 
+    margin-left: 15px;
+}
+
+.btn-light:hover{
+    background: linear-gradient(to right, rgb(184, 8, 8), rgb(156, 3, 3));
+    color: #fff; 
+}
+
+p{
+    font-size: 24px;
+    margin-left: -200px;
+}
+
+/* Make navigation items responsive */
+@media (max-width: 767.98px) {
+    .navbar-collapse > ul > li:hover {
+        border-bottom: none;
+    }
+}
+
+/* Dispositivos extra small (telefones em modo retrato, com menos de 576px)*/
+@media (max-width: 575.98px) {
+    .btn-custon {
+        margin: 10px 15px;
+        font-size: 1em;
+    }
+
+    .navbar-collapse > ul > li {
+        height: auto;
+        margin: 0;
+    }
+
+    .navbar-collapse > ul > li > a {
+        padding: 10px 15px;
+    }
+}
+
+/* Dispositivos small (telefones em modo paisagem, com 576px ou mais)*/
+@media (min-width: 576px) and (max-width: 767.98px) {
+    h1 {
+        font-size: 3em;
+    }
+
+    .btn-custon {
+        margin: 10px 15px;
+        font-size: 1em;
+    }
+
+    .navbar-collapse > ul {
+        padding-left: 0; /* Reset the padding for the ul element */
+    }
+
+    .navbar-collapse > ul > li {
+        display: inline-block;
+        height: auto;
+        margin: 0;
+        vertical-align: middle; /* Align the list items vertically in the middle */
+    }
+
+    .navbar-collapse > ul > li > a {
+        padding: 10px 15px;
+    }
+
+    /* Adjust the specific case for "Início" */
+    .navbar-collapse > ul > li:first-child > a {
+        margin-left: 0; /* Reset margin for the first item */
+    }
+}
+
+/* Dispositivos médios (tablets com 768px ou mais)*/
+@media (min-width: 768px) and (max-width: 991.98px) {
+    h1 {
+        font-size: 4em;
+    }
+
+    .btn-custon {
+        margin: 15px 20px;
+        font-size: 2em;
+    }
+
+    .navbar-collapse > ul > li {
+        height: auto; /* Adjust the height as needed */
+        margin: 0;
+    }
+
+    .navbar-collapse > ul > li > a {
+        padding: 10px 15px;
+    }
+}
+
+/* Dispositivos large (desktops com 992px ou mais)*/
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    h1 {
+        font-size: 5em;
+    }
+
+    .btn-custon {
+        margin: 15px 20px;
+        font-size: 2em;
+    }
+}
+
+/* Dispositivos extra large (desktops grandes com 1200px ou mais)*/
+@media (min-width: 1200px) {
+    h1 {
+        font-size: 6em;
+    }
+
+    .btn-custon {
+        margin: 20px 30px;
+        font-size: 2em;
+    }
+}
