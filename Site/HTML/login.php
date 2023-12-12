@@ -49,9 +49,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 </head>
 <body>
-    <div class="close-button" onclick="goToIndex()">
-        <span>X</span>
-    </div>
    <div class="wrapper">
         <span class="bg-animate"></span>
         <span class="bg-animate2"></span>

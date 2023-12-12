@@ -82,7 +82,7 @@ require_once("../PHP/header.php");
                         Além disso, consulte a agenda disponível no mesmo portal para ficar informado sobre futuras doses, 
                         proporcionando uma gestão eficiente de sua saúde e contribuindo para a prevenção de doenças.
                       </p>
-                      <a href="../HTML/login.php" class="btn btn-primary">Acessar</a>
+                      <a href="../PHP/sair.php" class="btn btn-primary">Acessar</a>
                     </div>
                   </div>
                   <div class="col-md-6">

@@ -39,9 +39,3 @@ function mostrarsenha3() {
         btnshowpass.classList.add('bi-eye-fill');
     }
 }
-
- // APERTAR O X E VOLTAR PARA O LOGIN
- function goToIndex() {
-    window.location.href = "../HTML/index.php";
-  }
-
