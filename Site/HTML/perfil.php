@@ -3,8 +3,8 @@ require_once("../PHP/header.php");
 require_once("../PHP/usuario.php");
 $user = new Usuario();
 
-if ($_SESSION['usuario'] == 'Governo Federal') {
-    header("location: index.php");
+if ($_SESSION['usuario'] == 'SAIR DA CONTA PROFISSIONAL') {
+    header("location: ../PHP/sair.php");
     exit;
 }
 

@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     if (!empty($cpflog)) {
         if ($cpflog == '1234' && $senha == 'GovernoFederal') {
-        $_SESSION['usuario'] = 'Governo Federal';
+        $_SESSION['usuario'] = 'SAIR DA CONTA PROFISSIONAL';
         $_SESSION['status'] = true;
         header("location: index.php");
         } else {
