@@ -7,4 +7,17 @@ BEGIN
   FROM usuario 
   WHERE cpf = cpfusr AND senha = senhausr;
 END $$
+
+-- procedure user_vacina_existe()
+CREATE OR REPLACE PROCEDURE user_vacina_existe(IN cpf_usr VARCHAR(11), IN id_vac INT, OUT saida_cpf VARCHAR(11), OUT saida_id INT)
+BEGIN
+  -- cpf do usuario
+  SELECT `CPF` INTO saida_cpf
+  FROM usuario 
+  WHERE `CPF` = cpf_usr;
+  -- id vacina
+  SELECT `ID` INTO saida_id
+  FROM vacinas 
+  WHERE `ID` = id_vac;
+END $$
 DELIMITER ;

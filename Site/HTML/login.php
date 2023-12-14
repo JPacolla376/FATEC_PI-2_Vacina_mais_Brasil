@@ -34,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     unset($nome);
     unset($email);
     unset($senha);
-    unset($idade);
+    unset($data_nasc);
     unset($cpflog);
 }
 ?>
@@ -94,7 +94,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <i class="bi bi-person-vcard"></i>
                 </div>
                 <div class="input-box animation" style="--i:19; --j:2">
-                    <input type="number" name="data_nasc" value="Ex: 1988-05-27" required>
+                    <input type="text" name="data_nasc" required>
                     <label>Data de Nascimento</label>
                     <i class="bi bi-person-fill-up"></i>
                 </div>
