@@ -120,7 +120,7 @@ if ($nvsenha == $confirmsenha && !empty($nvsenha) && !empty($confirmsenha)) {
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>CPF</label>
+                                        <label>Data de Nascimenmto</label>
                                         <input type="text" readonly class="form-control" value="<?php echo $_SESSION["data_nasc"]; ?>">
                                     </div>
                                 </div>
