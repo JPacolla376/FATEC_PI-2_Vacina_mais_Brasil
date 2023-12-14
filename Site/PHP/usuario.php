@@ -4,9 +4,9 @@ include_once("conexao.php");
 
 class Usuario extends Conectar {
 
-  public function cadastrar($cpf, $nome, $idade, $email, $senha) {
+  public function cadastrar($cpf, $nome, $data_nasc, $email, $senha) {
     try {
-      $sql = "INSERT INTO usuario (CPF, Nome, Idade, E_mail, senha) VALUES ('$cpf', '$nome', $idade, '$email', '$senha')";
+      $sql = "INSERT INTO usuario (CPF, Nome, Data_Nascimento, E_mail, senha) VALUES ('$cpf', '$nome', '$data_nasc', '$email', '$senha')";
       $stmt = $this->getConn()->exec($sql);
     } catch (PDOException $e) {
       echo $sql . "<br>" . $e->getMessage();
@@ -38,7 +38,7 @@ class Usuario extends Conectar {
       $stmt->execute();
       $user = $stmt->fetch();
       $_SESSION['cpf'] = $user[0];
-      $_SESSION['idade'] = $user[2];
+      $_SESSION['data_nasc'] = $user[2];
       $_SESSION['email'] = $user[3];
       $_SESSION['senha'] = $user[4];
     } catch (PDOException $e) {

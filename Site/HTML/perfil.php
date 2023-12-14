@@ -118,6 +118,12 @@ if ($nvsenha == $confirmsenha && !empty($nvsenha) && !empty($confirmsenha)) {
                                         <input type="text" readonly class="form-control" value="<?php echo $_SESSION["cpf"]; ?>">
                                     </div>
                                 </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Data de Nascimenmto</label>
+                                        <input type="text" readonly class="form-control" value="<?php echo $_SESSION["data_nasc"]; ?>">
+                                    </div>
+                                </div>
                                 <form action="../PHP/sair.php" method="post" class="mx-auto">
                                     <button class="btn btn-light" >Sair da Conta</button>
                                 </form>

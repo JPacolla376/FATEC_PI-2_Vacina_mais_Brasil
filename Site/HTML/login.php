@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     $cpf = isset($_POST['cpf']) ? $_POST['cpf'] : "";
     $nome = isset($_POST['nome']) ? $_POST['nome'] : "";
-    $idade = isset($_POST['idade']) ? $_POST['idade'] : "";
+    $data_nasc = isset($_POST['data_nasc']) ? $_POST['data_nasc'] : "";
     $email = isset($_POST['email']) ? $_POST['email'] : "";
     $senha = isset($_POST['senha']) ? $_POST['senha'] : "";
     $cpflog = isset($_POST['cpflog']) ? $_POST['cpflog'] : "";
@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     if (!empty($cpf)) {
-        $user->cadastrar($cpf, $nome, $idade, $email, $senha);
+        $user->cadastrar($cpf, $nome, $data_nasc, $email, $senha);
         $user->login($cpf, $senha);
     } 
 
@@ -34,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     unset($nome);
     unset($email);
     unset($senha);
-    unset($idade);
+    unset($data_nasc);
     unset($cpflog);
 }
 ?>
@@ -94,8 +94,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <i class="bi bi-person-vcard"></i>
                 </div>
                 <div class="input-box animation" style="--i:19; --j:2">
-                    <input type="number" name="idade" required>
-                    <label>idade</label>
+                    <input type="text" name="data_nasc" required>
+                    <label>Data de Nascimento</label>
                     <i class="bi bi-person-fill-up"></i>
                 </div>
                 <div class="input-box animation"style="--i:20; --j:3">

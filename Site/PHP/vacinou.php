@@ -6,14 +6,11 @@ class Vacinou extends Conectar {
 
   public function inserirVacinaUsuario($cpf_usr, $id_vacina, $data_vacinado) {
     try {
-      $sql = "SELECT * FROM usuario WHERE CPF = '$cpf_usr'";
+      $sql = "CALL user_vacina_existe($cpf_usr, $id_vacina, @cpf, @id)";
+      $stmt = $this->getConn()->query($sql);
+      $sql = "SELECT * FROM usuario WHERE CPF = @cpf";
       $stmt_usr = $this->getConn()->query($sql)->fetch();
-    } catch (PDOException $e) {
-      echo $sql . "<br>" . $e->getMessage();
-    }
-
-    try {
-      $sql = "SELECT * FROM vacinas WHERE `ID` = $id_vacina";
+      $sql = "SELECT * FROM vacinas WHERE ID = @id";
       $stmt_vac = $this->getConn()->query($sql)->fetch();
     } catch (PDOException $e) {
       echo $sql . "<br>" . $e->getMessage();
@@ -27,7 +24,6 @@ class Vacinou extends Conectar {
         echo $sql . "<br>" . $e->getMessage();
       }
     } else {
-      var_dump($stmt_vac);
       echo "ID da vacina ou o CPF do usuário está errado";
     }
   }
