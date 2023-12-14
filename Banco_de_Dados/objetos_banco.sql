@@ -1,4 +1,4 @@
--- Active: 1697206708792@@127.0.0.1@3306@vacinabrasil
+-- Active: 1696890039543@@127.0.0.1@3306@vacinabrasil
 DELIMITER $$
 -- procedure login()
 CREATE OR REPLACE PROCEDURE login(IN cpfusr VARCHAR(11), IN senhausr VARCHAR(255))
@@ -21,3 +21,8 @@ BEGIN
   WHERE `ID` = id_vac;
 END $$
 DELIMITER ;
+-- view mostrarVacinados
+CREATE OR REPLACE VIEW mostrarVacinados AS
+SELECT v.* FROM usuario u INNER JOIN vacinou vu INNER JOIN vacinas v 
+ON u.CPF = vu.fk_Usuario_CPF 
+AND v.ID = vu.fk_Vacinas_ID;
