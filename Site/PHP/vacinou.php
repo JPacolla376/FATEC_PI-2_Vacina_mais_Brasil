@@ -31,7 +31,7 @@ class Vacinou extends Conectar {
   public function MostrarVacinasTomadas() {
     try {
       $usuario = $_SESSION['usuario'];
-      $sql = "SELECT * FROM usuario u INNER JOIN vacinou vu INNER JOIN vacinas v ON u.CPF = vu.fk_Usuario_CPF AND v.ID = vu.fk_Vacinas_ID WHERE u.Nome = '$usuario'";
+      $sql = "SELECT * FROM mostrarvacinados WHERE u.Nome = '$usuario'";
       $stmt = $this->getConn()->query($sql);
       if ($stmt->rowCount() > 0) {
         while ($row = $stmt->fetch()) {
