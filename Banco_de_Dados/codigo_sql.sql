@@ -23,7 +23,7 @@ USE `vacinabrasil`;
 CREATE TABLE IF NOT EXISTS `usuario` (
   `CPF` varchar(11) NOT NULL,
   `Nome` varchar(60) NOT NULL,
-  `Idade` int(11) NOT NULL,
+  `Data_Nascimento` int(11) NOT NULL,
   `E_mail` varchar(60) DEFAULT NULL,
   `senha` varchar(60) DEFAULT NULL,
   PRIMARY KEY (`CPF`)
