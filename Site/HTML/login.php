@@ -95,7 +95,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
                 <div class="input-box animation" style="--i:19; --j:2">
                     <input type="text" name="data_nasc" required>
-                    <label>Data de Nascimento</label>
+                    <label>Data Nasc.</label>
                     <i class="bi bi-person-fill-up"></i>
                 </div>
                 <div class="input-box animation"style="--i:20; --j:3">
